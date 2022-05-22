@@ -82,6 +82,13 @@
 		max-width: 100%!important;
 	}
 
+	code::before {
+		content: attr(data-filename);
+		display: inline-block;
+		float: right;
+		opacity: 0.5;
+	}
+
 	code[class*="language-"],
 	pre[class*="language-"] {
 		background: hsl(230, 1%, 98%);

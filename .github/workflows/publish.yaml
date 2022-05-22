@@ -9,7 +9,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout 🐙
+      - name: Checkout 🛒
         uses: actions/checkout@v3
       - name: Nix ❄️
         uses: cachix/install-nix-action@v17
@@ -20,7 +20,7 @@ jobs:
         with:
           name: ners-ch
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-      - name: Build 🔧
+      - name: Build 🔨
         run: nix build
       - name: Publish 🚀
         uses: peaceiris/actions-gh-pages@v3
