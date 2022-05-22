@@ -1,0 +1,22 @@
+name: Deploy
+
+on:
+  pull_request:
+  push:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🐙
+        uses: actions/checkout@v3
+      - name: Nix ❄️
+        uses: cachix/install-nix-action@v17
+      - name: Build 🔧
+        run: nix build
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4.3.3
+        with:
+          branch: gh-pages
+          folder: result
