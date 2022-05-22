@@ -17,7 +17,8 @@
       <base href='/' />
       <link href='/static/ners.jpg' rel='icon' />
     
-    <script src='https://cdn.jsdelivr.net/combine/npm/prismjs/prism.min.js,npm/prismjs/plugins/autoloader/prism-autoloader.min.js'></script>
+    <script async src='https://cdn.jsdelivr.net/npm/prismjs/prism.min.js'></script>
+<script async src='https://cdn.jsdelivr.net/npm/prismjs/plugins/autoloader/prism-autoloader.min.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js'></script>
 <script>
   mermaid.initialize({startOnLoad:true});
@@ -31,10 +32,10 @@
     }
   };
 </script>
-<script type='text/javascript' id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js'></script>
+<script type='text/javascript' id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
 
   
-  <link href='tailwind.css?instanceId=b4e04085-ee2a-4fd7-b364-abeca1768aaa' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=c6a521b0-e4e8-431c-a575-ed07c20a6e4b' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -125,6 +126,13 @@
 	
 	code.mermaid svg {
 		max-width: 100%!important;
+	}
+
+	code::before {
+		content: attr(data-filename);
+		display: inline-block;
+		float: right;
+		opacity: 0.5;
 	}
 
 	code[class*="language-"],

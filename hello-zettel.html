@@ -4,14 +4,14 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Tag Index – ners
+    Hello, Zettel! – ners
   </title>
   
     
       <meta property='og:description' content />
       <meta property='og:site_name' content='ners' />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Tag Index' />
+      <meta property='og:title' content='Hello, Zettel!' />
     
     
       <base href='/' />
@@ -546,40 +546,200 @@
 
 <body class='bg-gray-400 overflow-y-scroll'>
   
-    <div class='container mx-auto '>
-      <main class='flex-col items-center justify-center mx-2'>
-        <h1 class='pb-2 mt-2 mb-2 text-6xl text-center'>
-          Tag Index
-        </h1>
-        <div class='flex justify-center items-center mb-2'>
-  <a target='_blank' class='italic underline' href='https://github.com/srid/emanote/discussions/50'>Experimental
-    feature</a> !
-</div>
-        <div class='pb-2 mx-auto my-4 lg:max-w-screen-md '>
+    <div class='container mx-auto'>
+
+      <nav id='breadcrumbs' class='w-full text-gray-700 md:hidden'>
+  <div class='flex justify-left'>
+    <div class='w-full px-2 py-2 bg-gray-50'>
+      <ul class='flex flex-wrap text-lg'>
+        <li class='inline-flex items-center'>
           
-    <div class='bg-gray-200 pb-2'>
-      <nav id='tagcrumbs' class='w-full pl-2 bg-gray-100'>
-        <div class='flex items-center justify-left'>
-          <div class='w-full px-2 py-2 '>
-            <ul class='flex flex-wrap text-lg'>
-              
-              <li class='inline-flex items-center text-black'>
-                <a class='px-1 font-mono'>
-                  /
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      <div class='flex flex-col pl-2 my-4 ml-2 space-y-2'>
+            
+              <img style='width: 1rem;' src='/static/ners.jpg' />
+            
+          
+        </li>
         
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href=''>
+                ners’ Zettelkasten
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
         
-      </div>
+      </ul>
     </div>
+    <button class='inline px-2 py-1 text-white bg-blue-600 outline-none cursor-pointer focus:outline-none' title='Toggle sidebar' type='button' onclick="toggleHidden('sidebar')">
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16'></path>
+      </svg>
+    </button>
+    <script>
+      function toggleHidden(elemId) {
+        document.getElementById(elemId).classList.toggle("hidden");
+      }
+    </script>
+  </div>
+</nav>
+
+      <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-gray-50 md:mt-8 md:shadow-2xl md:mb-8'>
+        <!-- Sidebar column -->
+        <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:h-full md:w-48 xl:w-64'>
+          <div class='px-2 py-2 text-gray-800'>
+
+            <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
+              <a href='-/tags' title='View tags'>
+                <svg style='width: 1rem;' class='hover:text-blue-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                  <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
+                  </path>
+                </svg>
+              </a>
+              <a href='-/all' title='Expand full tree'>
+                <svg style='width: 1rem;' class='hover:text-blue-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                  <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
+                  </path>
+                </svg>
+              </a>
+            </div>
+
+            <div id='site-logo' class='pl-2'>
+              <div class='flex items-center my-2 space-x-2 justify-left'>
+                <a href='' title='Go to Home'>
+                  
+                    
+                      <!-- The style width attribute here is to prevent huge
+                      icon from displaying at those rare occasions when Tailwind
+                      hasn't kicked in immediately on page load 
+                      -->
+                      <img style='width: 1rem;' class='transition transform hover:scale-110 hover:opacity-80' src='/static/ners.jpg' />
+                    
+                  
+                </a>
+                <a class='font-bold truncate' title='Go to Home' href=''>
+                  Home
+                </a>
+              </div>
+            </div>
+
+            
+              <!-- Variable bindings for this tree-->
   
+  
+
+
+  
+
+
+<!-- Rendering of this tree -->
+<div class='pl-2'>
+  <!-- Node's rootLabel-->
+  <div class='flex items-center my-2 space-x-2 justify-left'>
+    
+    
+      <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
+        </path>
+      </svg>
+      
+  
+    <a class='font-bold text-blue-600 hover:underline truncate' title='Hello, Zettel!' href='hello-zettel'>
+      Hello, Zettel!
+    </a>
+    
+      
+  </div>
+
+  <!-- Node's children forest, displayed only on active trees
+    TODO: Use <details> to toggle visibility?
+  -->
+  
+    
+  
+</div>
+            
+
+          </div>
+        </nav>
+
+        <!-- Main body column -->
+        <div class='flex-1 w-full overflow-x-auto bg-white'>
+          <main class='px-6 py-6'>
+            <h1 class='flex items-end mt-4 mb-6 text-5xl font-extrabold text-black rounded'>
+  <a class='z-40 tracking-tighter '>
+    Hello, Zettel!
+  </a>
+</h1>
+
+            <article class='overflow-auto'>
+  <!-- What goes in this file will appear on top of note body-->
+  
+    <p class='mb-3'>
+      Thanks to rapid advances in technology, it’s never been easier to put words on the Internet.
+    </p>
+  <h2 id='features' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700'>Features</h2><h3 id='maths' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Maths</h3>
+    <p class='mb-3'>
+      Prime numbers are positive integers <span class='math inline'>\(p &gt; 1\)</span> that have <em>exactly one</em> positive divisor other than <span class='math inline'>\(1\)</span>.
+    </p>
+  
+    <p class='mb-3'>
+      The <span class='math inline'>\(n\)</span>th prime number is commonly denoted <span class='math inline'>\(p_n\)</span>, so <span class='math inline'>\(p_1 = 2\)</span>, <span class='math inline'>\(p_2 = 3\)</span>, and so on.
+    </p>
+  
+    <p class='mb-3'>
+      The <a href='https://mathworld.wolfram.com/DirichletGeneratingFunction.html' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>Dirichlet generating function</a> of the characteristic function of the prime numbers <span class='math inline'>\(p_n\)</span> is given by
+    </p>
+  
+    <p class='mb-3'>
+      <span class='math display'>$$
+\begin{aligned}
+\sum^\infty_{n=1} \frac{[n \in {p_k}^\inf_{k=1}]}{n^{\small S}} &= \sum^\infty_{n=1} \frac{1}{p^{\small S}_n} \\
+&= \frac{1}{2^{\small S}} + \frac{1}{3^{\small S}} + \frac{1}{5^{\small S}} + \frac{1}{7^{\small S}} + \ldots \\
+&= P({\small S}),
+\end{aligned}
+$$</span>
+    </p>
+  
+    <p class='mb-3'>
+      where <span class='math inline'>\(P({\small S})\)</span> is the <a href='https://mathworld.wolfram.com/PrimeZetaFunction.html' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>prime zeta function</a> and <span class='math inline'>\([{\small S}]\)</span> is an <a href='https://mathworld.wolfram.com/IversonBracket.html' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>Iverson bracket</a>.
+    </p>
+  <h3 id='code' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Code</h3><div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell' data-filename='primes.hs'>main :: IO ()
+main = mapM_ print $ take 10 primes
+
+primes :: [Integer]
+primes = 2 : 3 : filter isPrime [5,7..]
+
+isPrime :: Integer -&gt; Bool
+isPrime = null . primeDivisors
+
+primeDivisors :: Integer -&gt; [Integer]
+primeDivisors n = [ p | p &lt;- takeWhile ((&lt;=n) . (^2)) primes, n `mod` p == 0 ]</code></pre></div><h3 id='diagrams' class='mt-6 mb-2 text-3xl font-bold text-gray-700'>Diagrams</h3><div xmlhtmlRaw><code class="mermaid">
+graph TD
+	main --> primes
+	primes --> isPrime
+	isPrime --> primeDivisors
+	primeDivisors --> primes
+</code>
+</div>
+
+  <!-- What goes in this file will appear below the note body-->
+</article>
+            <div class='flex flex-col lg:flex-row lg:space-x-2'>
+              
+              
+            </div>
+            
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
+
+            <!-- What goes in this file will at the very end of the main div -->
+          </main>
         </div>
-      </main>
+      </div>
       <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-800'>
 	
 	<div>
@@ -626,3 +786,4 @@
 </body>
 
 </html>
+
