@@ -17,7 +17,6 @@
           src = ./.;
           phases = [ "unpackPhase" "buildPhase" ];
           buildPhase = ''
-            ${pkgs.exa}/bin/exa --tree --icons
             mkdir -p $out
             ${pkgs.exa}/bin/exa
             emanote gen $out
