@@ -1,10 +1,4 @@
 {
-  nixConfig = {
-    extra-substituters = "https://cache.garnix.io";
-    extra-trusted-public-keys =
-      "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g=";
-  };
-
   inputs = {
     emanote.url = "github:srid/emanote";
     nixpkgs.follows = "emanote/nixpkgs";
@@ -17,13 +11,18 @@
       let pkgs = nixpkgs.legacyPackages.${system};
       in
       {
-        defaultPackage = pkgs.runCommand "website"
-          {
-            buildInputs = [ emanote.defaultPackage.${system} ];
-          } ''
-          mkdir -p $out
-          emanote gen $out
-        '';
+        defaultPackage = pkgs.stdenv.mkDerivation {
+          name = "website";
+          nativeBuildInputs = [ emanote.defaultPackage.${system} ];
+          src = ./.;
+          phases = [ "unpackPhase" "buildPhase" ];
+          buildPhase = ''
+            ${pkgs.exa}/bin/exa --tree --icons
+            mkdir -p $out
+            ${pkgs.exa}/bin/exa
+            emanote gen $out
+          '';
+        };
 
         defaultApp = pkgs.writeShellApplication {
           name = "emanote";
