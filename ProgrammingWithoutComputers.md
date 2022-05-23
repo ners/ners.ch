@@ -53,14 +53,16 @@ Crucially, it does not even print the result, as [observing the result may
 change it][observer]. In fact it has no means to do so; we have used the type
 system to strip the program of the ability to perform IO.[^1]
 
+[observer]: https://en.wikipedia.org/wiki/Observer_effect_(physics)
+
 After code review to ensure its purity and correctness, we may now reasonbly
 conclude that this program is _a valid representation of_ $p_{10^5}$.
 
-There is practical benefit to this realisation. The numeric value of $p_{10^5}$,
-as produced by evaluating the program on my computer, is
-1&#x202F;299&#x202F;709. One cannot reasonably verify this claim through review.
-The value of the number gives no hints to its provenance, which in this case has
-only been established through fiat.
+There is practical benefit to this realisation. The numeric value of
+$p_{10^5}$, as produced by evaluating the program on my computer, is
+1&#x202F;299&#x202F;709. One cannot reasonably verify this claim through
+review. The value of the number gives no hints to its provenance, which in this
+case has only been established through fiat.
 
 Reviewing the code that produced it lends confidence in the result's
 correctness, even when the result does not.
@@ -70,6 +72,6 @@ Given a large enough number to compute, the output may conceivably exceed the
 size of the code. This principle is leveraged by [self-extracting
 archives][archives].
 
-[^1]: We can evaluate such programs using GHCi.
 [archives]: https://en.wikipedia.org/wiki/Self-extracting_archive
-[observer]: https://en.wikipedia.org/wiki/Observer_effect_(physics)
+
+[^1]: We can evaluate such programs using GHCi.
