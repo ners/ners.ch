@@ -35,7 +35,7 @@
 <script type='text/javascript' id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
 
   
-  <link href='tailwind.css?instanceId=c77a3d19-6a25-4704-9097-262d6bf1341d' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=d20a5a12-2cd3-41cd-b33d-fbb996fe1772' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -749,7 +749,7 @@ isPrime = null . primeDivisors
 primeDivisors :: Integer -&gt; [Integer]
 primeDivisors n = [ p | p &lt;- takeWhile ((&lt;=n) . (^2)) primes, n `mod` p == 0 ]</code></pre></div>
     <p class='mb-3'>
-      The purpose of this program is to compute the 100 000th prime number <span class='math inline'>\(p_{10^5}\)</span>. The program does not concern itself with anything else; it consumes no input from the user or the environment, makes no assumptions on where or how it is being run, and does not alter the state of the world around it.
+      The purpose of this program is to compute the 100 000th prime number <span class='math inline'>\(p_{10^5}\)</span>. The program does not concern itself with anything else; it consumes no input from the user or the environment, makes no assumptions on where or how it is being run, and does not alter the state of the world around it.
     </p>
   
     <p class='mb-3'>
@@ -768,7 +768,7 @@ primeDivisors n = [ p | p &lt;- takeWhile ((&lt;=n) . (^2)) primes, n `mod` p ==
     </p>
   
     <p class='mb-3'>
-      There is practical benefit to this realisation. The numeric value of <span class='math inline'>\(p_{10^5}\)</span>, as produced by evaluating the program on my computer, is 1 299 709. One cannot reasonably verify this claim through review. The value of the number gives no hints to its provenance, which in this case has only been established through fiat.
+      There is practical benefit to this realisation. The numeric value of <span class='math inline'>\(p_{10^5}\)</span>, as produced by evaluating the program on my computer, is 1 299 709. One cannot reasonably verify this claim through review. The value of the number gives no hints to its provenance, which in this case has only been established through fiat.
     </p>
   
     <p class='mb-3'>
