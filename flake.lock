@@ -45,15 +45,15 @@
         "tailwind-haskell": "tailwind-haskell"
       },
       "locked": {
-        "lastModified": 1653171434,
-        "narHash": "sha256-NmEwr9Cg2GQmAwYmQV1AchxPeGRDxxU3K+qP+HWTPNw=",
-        "owner": "srid",
+        "lastModified": 1653310720,
+        "narHash": "sha256-xAG2eFc5EUuWUVu3GX3QIX7JEBvHhuwoyKvfiJtzR6c=",
+        "owner": "ners",
         "repo": "emanote",
-        "rev": "0375bfe35d53b10c8b8449b077ac54c0a841c23a",
+        "rev": "96d069bb9b0d2df420c8726cd94d32258283f7a1",
         "type": "github"
       },
       "original": {
-        "owner": "srid",
+        "owner": "ners",
         "repo": "emanote",
         "type": "github"
       }
@@ -172,12 +172,10 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1653117584,
-        "narHash": "sha256-5uUrHeHBIaySBTrRExcCoW8fBBYVSDjDYDU5A6iOl+k=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "f4dfed73ee886b115a99e5b85fdfbeb683290d83",
-        "type": "github"
+        "lastModified": 0,
+        "narHash": "sha256-YIgvvlk4iQ1Hi7KD9o5gsojc+ApB+jiH1d5stK8uXiw=",
+        "path": "/nix/store/jvjjrzjc5bgvwc5nzc1pqxn2wn35vx97-source",
+        "type": "path"
       },
       "original": {
         "owner": "nixos",

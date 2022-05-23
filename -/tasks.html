@@ -23,19 +23,20 @@
 <script>
   mermaid.initialize({startOnLoad:true});
   mermaid.init(undefined,document.querySelectorAll("code.mermaid"));
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']]
-    },
-    svg: {
-      fontCache: 'global'
-    }
-  };
 </script>
-<script type='text/javascript' id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.css' integrity='sha384-ZPe7yZ91iWxYumsBEOn7ieg8q/o+qh/hQpSaPow8T6BwALcXSCS6C6fSRPIAnTQs' crossorigin='anonymous' />
+
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src='https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/katex.min.js' integrity='sha384-ljao5I1l+8KYFXG7LNEA7DyaFvuvSCmedUf6Y6JI7LJqiu8q5dEivP2nDdFH31V4' crossorigin='anonymous'></script>
+
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer src='https://cdn.jsdelivr.net/npm/katex@0.15.6/dist/contrib/auto-render.min.js' integrity='sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR' crossorigin='anonymous' onload='renderMathInElement(document.body);'></script>
+
+<!-- Prefetch KaTeX fonts to prevent FOUT or FOIT. -->
+<script defer src='https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.js' integrity='sha256-4O4pS1SH31ZqrSO2A/2QJTVjTPqVe+jnYgOWUVr7EEc=' crossorigin='anonymous'></script>
 
   
-  <link href='tailwind.css?instanceId=f3ed6116-ea78-4477-9464-7f5d04bb1e8c' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=75d87630-f535-41c2-a70b-fb99ef4c29c1' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
