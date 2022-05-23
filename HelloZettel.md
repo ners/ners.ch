@@ -18,13 +18,13 @@ The [Dirichlet generating function] of the characteristic function of the prime 
 
 $$
 \begin{aligned}
-\sum^\infty_{n=1} \frac{[n \in \{p_k\}^\infty_{k=1}]}{n^{\small S}} &= \sum^\infty_{n=1} \frac{1}{p^{\small S}_n} \\
-	&= \frac{1}{2^{\small S}} + \frac{1}{3^{\small S}} + \frac{1}{5^{\small S}} + \frac{1}{7^{\small S}} + \ldots \\
-	&= P({\small S}),
+\sum^\infty_{n=1} \frac{[n \in \{p_k\}^\infty_{k=1}]}{n^{\scriptsize S}} &= \sum^\infty_{n=1} \frac{1}{p^{\scriptsize S}_n} \\
+	&= \frac{1}{2^{\scriptsize S}} + \frac{1}{3^{\scriptsize S}} + \frac{1}{5^{\scriptsize S}} + \frac{1}{7^{\scriptsize S}} + \ldots \\
+	&= P({\scriptsize S}),
 \end{aligned}
 $$
 
-where $P({\small S})$ is the [prime zeta function] and $[{\small S}]$ is an [Iverson bracket].
+where $P({\scriptsize S})$ is the [prime zeta function] and $[{\scriptsize S}]$ is an [Iverson bracket].
 
 [Dirichlet generating function]: https://mathworld.wolfram.com/DirichletGeneratingFunction.html
 [prime zeta function]: https://mathworld.wolfram.com/PrimeZetaFunction.html
