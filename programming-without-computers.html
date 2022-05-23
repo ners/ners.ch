@@ -4,14 +4,14 @@
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    ners’ Zettelkasten – ners
+    Programming without computers – ners
   </title>
   
     
       <meta property='og:description' content />
       <meta property='og:site_name' content='ners' />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='ners’ Zettelkasten' />
+      <meta property='og:title' content='Programming without computers' />
     
     
       <base href='/' />
@@ -560,6 +560,17 @@
           
         </li>
         
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href=''>
+                ners’ Zettelkasten
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+        
       </ul>
     </div>
     <button class='inline px-2 py-1 text-white bg-blue-600 outline-none cursor-pointer focus:outline-none' title='Toggle sidebar' type='button' onclick="toggleHidden('sidebar')">
@@ -654,9 +665,7 @@
             
               <!-- Variable bindings for this tree-->
   
-    
   
-
 
 
   
@@ -669,23 +678,23 @@
     
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
         </path>
       </svg>
-    
+      
   
-    <a class='hover:underline truncate' title='Programming without computers' href='programming-without-computers'>
+    <a class='font-bold text-blue-600 hover:underline truncate' title='Programming without computers' href='programming-without-computers'>
       Programming without computers
     </a>
     
       
-        
-    
   </div>
 
   <!-- Node's children forest, displayed only on active trees
     TODO: Use <details> to toggle visibility?
   -->
+  
+    
   
 </div>
             
@@ -698,7 +707,7 @@
           <main class='px-6 py-6'>
             <h1 class='flex items-end mt-4 mb-6 text-5xl font-extrabold text-black rounded'>
   <a class='z-40 tracking-tighter '>
-    ners’ Zettelkasten
+    Programming without computers
   </a>
 </h1>
 
@@ -706,12 +715,83 @@
   <!-- What goes in this file will appear on top of note body-->
   
     <p class='mb-3'>
-      Hi there. I’m ners. Welcome to my domain.
+      Programming has as little to do with computers as astronomy has to do with telescopes. Computers allow us to evaluate some aspects of a program, but the process of building and reasoning about a program happens outside a computer.
     </p>
   
     <p class='mb-3'>
-      The site you have stumbled onto is an instance of <a href='https://en.wikipedia.org/wiki/Zettelkasten' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>Zettelkasten</a>. It is where I dump my ideas, ranging from genius to rambling, when there isn’t a more appropriate place for them.
+      Programming primarily happens in our minds, on paper or whiteboard, and in conversation.
     </p>
+  <h2 id='code-is-a-tool-for-communication' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700'>Code is a tool for communication</h2>
+    <p class='mb-3'>
+      A majority of code is written by humans, for humans, not for computers. It may happen that at some point our code will be evaluated by a computer, but that is secondary to its true purpose of <em>communicating intent</em>.
+    </p>
+  
+    <p class='mb-3'>
+      This is why we don’t delete source code after compiling it, but track it with version control, keep redundant backups, protect it against tampering, and generally treat it with the greatest of care.
+    </p>
+  
+    <p class='mb-3'>
+      One could argue that the only output of source code is its machine representation; the stream of instructions that the computer will run, produced either by a compiler or an interpreter. But that’s not the programmer’s intent, either. We write a program because we want to express computation, not the means by which it will be evaluated.
+    </p>
+  
+    <p class='mb-3'>
+      Consider the following program:
+    </p>
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>main :: Monad m =&gt; m Integer
+main = return $ primes !! 99999
+
+primes :: [Integer]
+primes = 2 : 3 : filter isPrime [5,7..]
+
+isPrime :: Integer -&gt; Bool
+isPrime = null . primeDivisors
+
+primeDivisors :: Integer -&gt; [Integer]
+primeDivisors n = [ p | p &lt;- takeWhile ((&lt;=n) . (^2)) primes, n `mod` p == 0 ]</code></pre></div>
+    <p class='mb-3'>
+      The purpose of this program is to compute the 100 000th prime number <span class='math inline'>\(p_{10^5}\)</span>. The program does not concern itself with anything else; it consumes no input from the user, makes no assumptions on where or how it is being run, and does not alter the state of the world around it.
+    </p>
+  
+    <p class='mb-3'>
+      Crucially, it does not even print the result
+    <!-- DoNotFormat -->
+    <!-- We use JavaScript because anchor links won't work if there is a <base> tag;
+         see https://stackoverflow.com/a/34765348 
+    -->
+    <sup class='px-0.5'><a class='text-blue-600 hover:underline' href='javascript:;' onclick="document.location.hash='#fn1';">1</a></sup>
+    <!-- DoNotFormat -->
+  , as <a href='https://en.wikipedia.org/wiki/Observer_effect_(physics)' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>observing the result may change it</a>.
+    </p>
+  
+    <p class='mb-3'>
+      After code review to ensure its purity and correctness, we may now reasonbly conclude that this program is <em>a valid representation of <span class='math inline'>\(p_{10^5}\)</span></em>.
+    </p>
+  
+    <p class='mb-3'>
+      There is practical benefit to this realisation. The numeric value of <span class='math inline'>\(p_{10^5}\)</span>, as produced by evaluating the program on my computer, is 1299709. One cannot reasonably verify that through review. The value of the number gives no hints to its provenance, which in this case has only been established through fiat.
+    </p>
+  
+    <p class='mb-3'>
+      Reviewing the code that produced it lends confidence in the result’s correctness, even when the result does not.
+    </p>
+  
+    <p class='mb-3'>
+      It just so happens that the code for the program is longer than its result. Given a large enough number to compute, the output may conceivably exceed the size of the code. This principle is leveraged by <a href='https://en.wikipedia.org/wiki/Self-extracting_archive' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>self-extracting archives</a>.
+    </p>
+  
+    <div title='Footnotes' class='pt-2 mt-8 space-y-1 text-gray-500 transform border-t-2'>
+      <header class='font-semibold'>Footnotes</header>
+      
+        <div id='fn1'>
+          <header class='inline-block italic'>
+            1.
+          </header>
+          <div class='inline-block mb-2 ml-4'>
+            We can evaluate such programs using GHCi.
+          </div>
+        </div>
+      
+    </div>
   
 
   <!-- What goes in this file will appear below the note body-->
