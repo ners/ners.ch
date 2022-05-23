@@ -54,11 +54,11 @@
   </Note:Ref>
   <Note:List>
     <div title="Footnotes"
-      class="pt-2 mt-8 space-y-1 text-gray-500 transform scale-x-90 border-t-2">
+      class="pt-2 mt-8 space-y-1 text-gray-500 transform border-t-2">
       <header class="font-semibold">Footnotes</header>
       <footnote>
         <div id="fn${footnote:idx}">
-          <header class="italic">
+          <header class="inline-block italic">
             <footnote:idx />.
           </header>
           <div class="inline-block mb-2 ml-4">
