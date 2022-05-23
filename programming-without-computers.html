@@ -35,7 +35,7 @@
 <script type='text/javascript' id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
 
   
-  <link href='tailwind.css?instanceId=d20a5a12-2cd3-41cd-b33d-fbb996fe1772' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=f3ed6116-ea78-4477-9464-7f5d04bb1e8c' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -737,7 +737,7 @@
     <p class='mb-3'>
       Consider the following program:
     </p>
-  <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell'>main :: Monad m =&gt; m Integer
+  <div class='py-0.5 mb-3 text-sm'><pre><code class='haskell language-haskell' data-filename='primes.hs'>main :: Monad m =&gt; m Integer
 main = return $ primes !! 99999
 
 primes :: [Integer]
@@ -753,14 +753,14 @@ primeDivisors n = [ p | p &lt;- takeWhile ((&lt;=n) . (^2)) primes, n `mod` p ==
     </p>
   
     <p class='mb-3'>
-      Crucially, it does not even print the result
+      Crucially, it does not even print the result, as [observing the result may change it][observer]. In fact it has no means to do so; we have used the type system to strip the program of the ability to perform IO.
     <!-- DoNotFormat -->
     <!-- We use JavaScript because anchor links won't work if there is a <base> tag;
          see https://stackoverflow.com/a/34765348 
     -->
     <sup class='px-0.5'><a class='text-blue-600 hover:underline' href='javascript:;' onclick="document.location.hash='#fn1';">1</a></sup>
     <!-- DoNotFormat -->
-  , as <a href='https://en.wikipedia.org/wiki/Observer_effect_(physics)' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>observing the result may change it</a>.
+  
     </p>
   
     <p class='mb-3'>
@@ -776,7 +776,7 @@ primeDivisors n = [ p | p &lt;- takeWhile ((&lt;=n) . (^2)) primes, n `mod` p ==
     </p>
   
     <p class='mb-3'>
-      It just so happens that the code for the program is longer than its result. Given a large enough number to compute, the output may conceivably exceed the size of the code. This principle is leveraged by <a href='https://en.wikipedia.org/wiki/Self-extracting_archive' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>self-extracting archives</a>.
+      It just so happens that the code for the program is longer than its result. Given a large enough number to compute, the output may conceivably exceed the size of the code. This principle is leveraged by [self-extracting archives][archives].
     </p>
   
     <div title='Footnotes' class='pt-2 mt-8 space-y-1 text-gray-500 transform border-t-2'>
