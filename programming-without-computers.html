@@ -35,7 +35,7 @@
 <script type='text/javascript' id='MathJax-script' async src='https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js'></script>
 
   
-  <link href='tailwind.css?instanceId=95226edd-eb9a-4987-987c-691990b1c3ff' rel='stylesheet' type='text/css' />
+  <link href='tailwind.css?instanceId=c77a3d19-6a25-4704-9097-262d6bf1341d' rel='stylesheet' type='text/css' />
 
   <!-- Heist error element -->
   <style type='text/css'>
@@ -731,7 +731,7 @@
     </p>
   
     <p class='mb-3'>
-      One could argue that the only output of source code is its machine representation; the stream of instructions that the computer will run, produced either by a compiler or an interpreter. But that’s not the programmer’s intent, either. We write a program because we want to express computation, not the means by which it will be evaluated.
+      One could argue that the only output of source code is its machine representation; the stream of instructions that the computer will run, produced either by a compiler or an interpreter. But that’s not the programmer’s intent, either. One writes a program to express computation, not the means by which it will be evaluated.
     </p>
   
     <p class='mb-3'>
@@ -749,7 +749,7 @@ isPrime = null . primeDivisors
 primeDivisors :: Integer -&gt; [Integer]
 primeDivisors n = [ p | p &lt;- takeWhile ((&lt;=n) . (^2)) primes, n `mod` p == 0 ]</code></pre></div>
     <p class='mb-3'>
-      The purpose of this program is to compute the 100 000th prime number <span class='math inline'>\(p_{10^5}\)</span>. The program does not concern itself with anything else; it consumes no input from the user, makes no assumptions on where or how it is being run, and does not alter the state of the world around it.
+      The purpose of this program is to compute the 100 000th prime number <span class='math inline'>\(p_{10^5}\)</span>. The program does not concern itself with anything else; it consumes no input from the user or the environment, makes no assumptions on where or how it is being run, and does not alter the state of the world around it.
     </p>
   
     <p class='mb-3'>
@@ -764,11 +764,11 @@ primeDivisors n = [ p | p &lt;- takeWhile ((&lt;=n) . (^2)) primes, n `mod` p ==
     </p>
   
     <p class='mb-3'>
-      After code review to ensure its purity and correctness, we may now reasonbly conclude that this program is <em>a valid representation of <span class='math inline'>\(p_{10^5}\)</span></em>.
+      After code review to ensure its purity and correctness, we may now reasonbly conclude that this program is <em>a valid representation of</em> <span class='math inline'>\(p_{10^5}\)</span>.
     </p>
   
     <p class='mb-3'>
-      There is practical benefit to this realisation. The numeric value of <span class='math inline'>\(p_{10^5}\)</span>, as produced by evaluating the program on my computer, is 1299709. One cannot reasonably verify that through review. The value of the number gives no hints to its provenance, which in this case has only been established through fiat.
+      There is practical benefit to this realisation. The numeric value of <span class='math inline'>\(p_{10^5}\)</span>, as produced by evaluating the program on my computer, is 1 299 709. One cannot reasonably verify this claim through review. The value of the number gives no hints to its provenance, which in this case has only been established through fiat.
     </p>
   
     <p class='mb-3'>
