@@ -45,15 +45,15 @@
         "tailwind-haskell": "tailwind-haskell"
       },
       "locked": {
-        "lastModified": 1653310720,
-        "narHash": "sha256-xAG2eFc5EUuWUVu3GX3QIX7JEBvHhuwoyKvfiJtzR6c=",
-        "owner": "ners",
+        "lastModified": 1653397415,
+        "narHash": "sha256-ThEZNeMcpVSveQQ0cFpdMVC90Hi9hF9GhurRQqpB9DU=",
+        "owner": "srid",
         "repo": "emanote",
-        "rev": "96d069bb9b0d2df420c8726cd94d32258283f7a1",
+        "rev": "9190d077f317db7dee4f3ec48b44a16a61337192",
         "type": "github"
       },
       "original": {
-        "owner": "ners",
+        "owner": "srid",
         "repo": "emanote",
         "type": "github"
       }
