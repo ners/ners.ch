@@ -1,4 +1,8 @@
-# Step 0: Motivation
+---
+order: 0
+---
+
+# 0. Motivation
 
 ## Videos
 - [Simon Peyton-Jones: Escape from the ivory tower: the Haskell journey](https://youtu.be/re96UgMk6GQ)

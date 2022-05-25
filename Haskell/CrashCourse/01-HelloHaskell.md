@@ -1,4 +1,8 @@
-# Step 1: Hello, Haskell!
+---
+order: 1
+---
+
+# 1. Hello, Haskell!
 
 In this step we'll get a Haskell environment up and running.
 
