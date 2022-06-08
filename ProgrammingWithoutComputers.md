@@ -4,6 +4,12 @@ slug: programming-without-computers
 
 # Programming without computers
 
+> Programs must be written for people to read, and only incidentally for machines to execute.
+> 
+> — Harold Abelson, [Structure and Interpretation of Computer Programs][sicp]
+
+[sicp]: https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-7.html
+
 Programming has as little to do with computers as astronomy has to do with
 telescopes. Computers allow us to evaluate some aspects of a program, but the
 process of building and reasoning about a program happens outside a computer.
