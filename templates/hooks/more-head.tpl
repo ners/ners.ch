@@ -77,6 +77,12 @@
 	svg {
 		display: inline-block!important;
 	}
+
+	code {
+		font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+		color: hsl(230, 8%, 24%);
+		line-height: 1.5;
+	}
 	
 	code.mermaid svg {
 		max-width: 100%!important;
@@ -92,14 +98,11 @@
 	code[class*="language-"],
 	pre[class*="language-"] {
 		background: hsl(230, 1%, 98%);
-		color: hsl(230, 8%, 24%);
-		font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
 		direction: ltr;
 		text-align: left;
 		white-space: pre;
 		word-spacing: normal;
 		word-break: normal;
-		line-height: 1.5;
 		-moz-tab-size: 2;
 		-o-tab-size: 2;
 		tab-size: 2;
