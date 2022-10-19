@@ -18,7 +18,7 @@ If you are on Linux, macOS, or Windows with WSL, then the recommended method of
 getting a development environment going is Nix with flakes:
 1. [Install Nix][nix-install]
 2. [Enable flakes][nix-flakes]
-3. Run `nix shell nixpkgs\#ghc`
+3. Run `nix shell nixpkgs#ghc`
 
 To proceed without Nix, follow the instructions [here](https://www.haskell.org/ghcup/install/#installation).
 
@@ -33,6 +33,22 @@ The Glorious Glasgow Haskell Compilation System, version 9.0.2
 ```
 
 [^1]: Short for _Glasgow Haskell Compiler_. [GHC Homepage](https://www.haskell.org/ghc/)
+
+## GHCi: the Haskell playground
+
+In either Replit or local installation of the GHC, we can enter an interactive environment with GHCi:
+
+```
+$ ghci
+GHCi, version 9.0.2: https://www.haskell.org/ghc/  :? for help
+ghci>
+```
+
+If using Nix, here is a quick one-liner:
+
+```
+$ nix shell nixpkgs#ghc --command ghci
+```
 
 ## Running our first program
 

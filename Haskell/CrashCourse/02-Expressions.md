@@ -2,10 +2,10 @@
 order: 2
 ---
 
-# 2. Express yourself
+# 2. Expressions
 
 Values and expressions are the same as in most languages. We have numbers,
-strings, characters, bools, ...
+strings, characters, booleans, ...
 
 ```
 ghci> 2
@@ -30,7 +30,7 @@ ghci> :t 2
 2 :: Num p => p
 ```
 
-Num is a typeclass that describes many number types. We'll tackle those in
+`Num` is a typeclass that describes many number types. We'll tackle those in
 another section.
 
 Notice that all the types are capitalised. Everything that isn't a type is
