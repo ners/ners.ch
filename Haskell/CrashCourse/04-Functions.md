@@ -7,9 +7,9 @@ order: 4
 A function is created the same way as a constant, there is no special keyword or
 syntax:
 
-```haskell
-two = 2
-addTwo n = n + 2
+```
+ghci> two = 2
+ghci> addTwo n = n + 2
 ```
 
 Note that the parameter to the function goes before `=`, and there are no
@@ -17,14 +17,15 @@ paretheses.
 
 We can also take two parameters:
 
-```haskell
-add a b = a + b
+```
+ghci> add a b = a + b
 ```
 
 Function calls similarly have no paretheses:
 
-```haskell
-add 2 3
+```
+ghci> add 2 3
+5
 ```
 
 Each function has a type, just like expressions do:
@@ -54,8 +55,6 @@ on what it does.
 But the human coder can still specify the type above the function. For this we
 need to break out of GHCi and start writing a new Haskell program:
 
-
-{ data-filename="hello.hs" }
 ```haskell
 addTwo :: Int -> Int
 addTwo n = n + 2
@@ -63,7 +62,7 @@ addTwo n = n + 2
 
 A Haskell program needs to have a `main` as well:
 
-
+{ data-filename="hello.hs" }
 ```haskell
 addTwo :: Int -> Int
 addTwo n = n + 2
@@ -73,17 +72,16 @@ main = print (addTwo 3)
 
 Now we can either compile the program:
 ```bash
-ghc hello.hs
+$ ghc hello.hs
 ./hello
 ```
 
 Or better yet, interpret it like Python:
 ```bash
-runhaskell hello.hs
+$ runhaskell hello.hs
 ```
 
 Let's look at the function again:
-
 
 ```haskell
 addTwo :: Int -> Int
@@ -102,6 +100,7 @@ addTwo :: Int -> Int -> Int
 addTwo n = n + 2
 ```
 
+{ data-filename="GHC output" }
 ```
 hello.hs:2:12: error:
     • Couldn't match expected type ‘Int -> Int’ with actual type ‘Int’
@@ -117,7 +116,7 @@ actually takes just one parameter!
 
 Let's look at the `main` function again:
 
-
+{ data-filename="hello.hs" }
 ```haskell
 main = print (addTwo 3)
 ```
@@ -129,10 +128,12 @@ More interestingly, why did we put `addTwo 3` in paretheses?
 If we didn't, the `print` function would take 2 parameters: a function and an
 int:
 
+{ data-filename="hello.hs" }
 ```haskell
 main = print addTwo 3
 ```
 
+{ data-filename="GHC output" }
 ```
 hello.hs:4:8: error:
     • Couldn't match expected type: t0 -> t
@@ -153,10 +154,12 @@ introducing explicit precedence with paretheses.
 
 Another example of this is string concatenation:
 
+{ data-filename="hello.hs" }
 ```haskell
 main = print "Hello," ++ " Idaho"
 ```
 
+{ data-filename="GHC output" }
 ```
 hello.hs:4:1: error:
     • Couldn't match expected type: IO t0
