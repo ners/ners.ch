@@ -1,4 +1,5 @@
 { runCommand
+, nix-filter
 , writeShellApplication
 , buildEnv
 , emanote
@@ -6,8 +7,25 @@
 
 let
   name = "website";
-  website = runCommand name { nativeBuildInputs = [ emanote ]; } ''
+  website = runCommand name
+    {
+      src = nix-filter {
+        root = ./.;
+        include = [
+          ./static
+          ./templates
+          nix-filter.isDirectory
+          (nix-filter.matchExt "md")
+          (nix-filter.matchExt "yaml")
+        ];
+        exclude = [
+          ./.github
+        ];
+      };
+      nativeBuildInputs = [ emanote ];
+    } ''
     mkdir -p $out
+    cd $src
     emanote gen $out
   '';
   serve = writeShellApplication {
@@ -19,7 +37,8 @@ let
     runtimeInputs = [ emanote ];
   };
 in
-buildEnv {
+buildEnv
+{
   inherit name;
   paths = [ website serve ];
 }

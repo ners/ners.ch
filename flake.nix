@@ -14,9 +14,7 @@
       url = "github:srid/emanote";
       inputs = {
         ema.follows = "ema";
-        flake-compat.follows = "flake-compat";
         flake-parts.follows = "flake-parts";
-        flake-utils.follows = "flake-utils";
         haskell-flake.follows = "haskell-flake";
         nixpkgs.follows = "nixpkgs";
         tailwind.follows = "tailwind-haskell";
@@ -30,6 +28,7 @@
       };
     };
     flake-utils.url = "github:numtide/flake-utils";
+    nix-filter.url = "github:numtide/nix-filter";
     flake-compat = {
       url = "github:edolstra/flake-compat";
       flake = false;
@@ -48,12 +47,12 @@
         };
         pkgs = import inputs.nixpkgs {
           inherit system;
-          overlays = [ emanote-overlay ];
+          overlays = [ inputs.nix-filter.overlays.default emanote-overlay ];
         };
       in
       {
-        packages.default = pkgs.callPackage ./default.nix {};
-        devShells.default = pkgs.callPackage ./shell.nix {};
+        packages.default = pkgs.callPackage ./default.nix { };
+        devShells.default = pkgs.callPackage ./shell.nix { };
         formatter = pkgs.nixpkgs-fmt;
       });
 }
