@@ -1,0 +1,10 @@
+#!/nix/store/znkypmyvykawwg71xawqzb98qbllijv8-bash-5.1-p16/bin/bash
+set -o errexit
+set -o nounset
+set -o pipefail
+
+export PATH="/nix/store/kcz588p2hvfknbagn57rjr0r3g3hdrkd-emanote-0.7.12.3/bin:$PATH"
+
+export PORT="${PORT:-8000}"
+emanote run --port "$PORT"
+

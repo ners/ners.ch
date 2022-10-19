@@ -1,17 +1,18 @@
+<!DOCTYPE html>
 <html lang='en'>
 
 <head>
   <meta charset='UTF-8' />
   <meta name='viewport' content='width=device-width, initial-scale=1' />
   <title>
-    Index – ners
+    0. Motivation – ners
   </title>
   
     
-      <meta property='og:description' content='Hi there. I’m ners. Welcome to my domain.' />
+      <meta property='og:description' content />
       <meta property='og:site_name' content='ners' />
       <meta property='og:type' content='website' />
-      <meta property='og:title' content='Index' />
+      <meta property='og:title' content='0. Motivation' />
     
     
       <base href='/' />
@@ -550,20 +551,105 @@
 
 <body class='bg-gray-400 overflow-y-scroll'>
   
-    <div class='container mx-auto '>
-      <main class='flex-col items-center justify-center mx-2'>
-        <h1 class='pb-2 mt-2 mb-2 text-6xl text-center'>
-          Index
-        </h1>
-        <div class='flex justify-center items-center mb-2'>
-  <a target='_blank' class='italic underline' href='https://github.com/srid/emanote/discussions/50'>Experimental
-    feature</a> !
-</div>
-        <div class='pb-2 mx-auto my-4 lg:max-w-screen-md '>
+    <div class='container mx-auto'>
+
+      <nav id='breadcrumbs' class='w-full text-gray-700 md:hidden'>
+  <div class='flex justify-left'>
+    <div class='w-full px-2 py-2 bg-gray-50'>
+      <ul class='flex flex-wrap text-lg'>
+        <li class='inline-flex items-center'>
           
-    <div class='pt-1 pb-2 pl-4 bg-gray-200'>
-      
-        <!-- Variable bindings for this tree-->
+            
+              <img style='width: 1rem;' src='/static/ners.jpg' />
+            
+          
+        </li>
+        
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href=''>
+                ners’ Zettelkasten
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href='Haskell'>
+                Haskell
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+            <li class='inline-flex items-center'>
+              <a class='px-1 font-bold' href='Haskell/CrashCourse'>
+                A crash course in Haskell
+              </a>
+              <svg fill='currentColor' viewBox='0 0 20 20' class='w-auto h-5 text-gray-400'>
+                <path fill-rule='evenodd' d='M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z' clip-rule='evenodd'></path>
+              </svg>
+            </li>
+          
+        
+      </ul>
+    </div>
+    <button class='inline px-2 py-1 text-white bg-blue-600 outline-none cursor-pointer focus:outline-none' title='Toggle sidebar' type='button' onclick="toggleHidden('sidebar')">
+      <svg xmlns='http://www.w3.org/2000/svg' class='w-4' fill='none' viewBox='0 0 24 24' stroke='currentColor'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16'></path>
+      </svg>
+    </button>
+    <script>
+      function toggleHidden(elemId) {
+        document.getElementById(elemId).classList.toggle("hidden");
+      }
+    </script>
+  </div>
+</nav>
+
+      <div id='container' class='flex flex-nowrap flex-col md:flex-row bg-gray-50 md:mt-8 md:shadow-2xl md:mb-8'>
+        <!-- Sidebar column -->
+        <nav id='sidebar' class='flex-shrink hidden leading-relaxed md:block md:sticky md:top-0 md:h-full md:w-48 xl:w-64'>
+          <div class='px-2 py-2 text-gray-800'>
+
+            <div id='indexing-links' class='flex flex-row float-right p-2 space-x-2 text-gray-500'>
+              <a href='-/tags' title='View tags'>
+                <svg style='width: 1rem;' class='hover:text-blue-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                  <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z'>
+                  </path>
+                </svg>
+              </a>
+              <a href='-/all' title='Expand full tree'>
+                <svg style='width: 1rem;' class='hover:text-blue-700' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
+                  <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4'>
+                  </path>
+                </svg>
+              </a>
+            </div>
+
+            <div id='site-logo' class='pl-2'>
+              <div class='flex items-center my-2 space-x-2 justify-left'>
+                <a href='' title='Go to Home'>
+                  
+                    
+                      <!-- The style width attribute here is to prevent huge
+                      icon from displaying at those rare occasions when Tailwind
+                      hasn't kicked in immediately on page load 
+                      -->
+                      <img style='width: 1rem;' class='transition transform hover:scale-110 hover:opacity-80' src='/static/ners.jpg' />
+                    
+                  
+                </a>
+                <a class='font-bold truncate' title='Go to Home' href=''>
+                  Home
+                </a>
+              </div>
+            </div>
+
+            
+              <!-- Variable bindings for this tree-->
   
     
       
@@ -637,11 +723,7 @@
     
       <!-- Variable bindings for this tree-->
   
-    
-      
-    
-    
-
+  
 
 
   
@@ -654,12 +736,12 @@
     
     
       <svg class='w-4 h-4 flex-shrink-0 inline' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
-        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z'>
+        <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z'>
         </path>
       </svg>
-    
+      
   
-    <a class='hover:underline truncate' title='0. Motivation' href='Haskell/CrashCourse/00-Motivation'>
+    <a class='font-bold text-blue-600 hover:underline truncate' title='0. Motivation' href='Haskell/CrashCourse/00-Motivation'>
       0. Motivation
     </a>
     
@@ -677,9 +759,7 @@
       <!-- Variable bindings for this tree-->
   
     
-      
-    
-    
+  
 
 
 
@@ -703,22 +783,20 @@
     </a>
     
       
+        
+    
   </div>
 
   <!-- Node's children forest, displayed only on active trees
     TODO: Use <details> to toggle visibility?
   -->
   
-    
-  
 </div>
     
       <!-- Variable bindings for this tree-->
   
     
-      
-    
-    
+  
 
 
 
@@ -742,22 +820,20 @@
     </a>
     
       
+        
+    
   </div>
 
   <!-- Node's children forest, displayed only on active trees
     TODO: Use <details> to toggle visibility?
   -->
   
-    
-  
 </div>
     
       <!-- Variable bindings for this tree-->
   
     
-      
-    
-    
+  
 
 
 
@@ -781,22 +857,20 @@
     </a>
     
       
+        
+    
   </div>
 
   <!-- Node's children forest, displayed only on active trees
     TODO: Use <details> to toggle visibility?
   -->
   
-    
-  
 </div>
     
       <!-- Variable bindings for this tree-->
   
     
-      
-    
-    
+  
 
 
 
@@ -820,14 +894,14 @@
     </a>
     
       
+        
+    
   </div>
 
   <!-- Node's children forest, displayed only on active trees
     TODO: Use <details> to toggle visibility?
   -->
   
-    
-  
 </div>
     
   
@@ -835,13 +909,11 @@
     
   
 </div>
-      
-        <!-- Variable bindings for this tree-->
+            
+              <!-- Variable bindings for this tree-->
   
     
-      
-    
-    
+  
 
 
 
@@ -865,22 +937,20 @@
     </a>
     
       
+        
+    
   </div>
 
   <!-- Node's children forest, displayed only on active trees
     TODO: Use <details> to toggle visibility?
   -->
   
-    
-  
 </div>
-      
-        <!-- Variable bindings for this tree-->
+            
+              <!-- Variable bindings for this tree-->
   
     
-      
-    
-    
+  
 
 
 
@@ -904,20 +974,108 @@
     </a>
     
       
+        
+    
   </div>
 
   <!-- Node's children forest, displayed only on active trees
     TODO: Use <details> to toggle visibility?
   -->
   
-    
-  
 </div>
+            
+
+          </div>
+        </nav>
+
+        <!-- Main body column -->
+        <div class='flex-1 w-full overflow-x-auto bg-white'>
+          <main class='px-6 py-6'>
+            <h1 class='flex items-end mt-4 mb-6 text-5xl font-extrabold text-black rounded'>
+  <a class='z-40 tracking-tighter '>
+    0. Motivation
+  </a>
+</h1>
+
+            <article class='overflow-auto'>
+  <!-- What goes in this file will appear on top of note body-->
+  <h2 id='videos' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700'>Videos</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
       
-    </div>
+        <li>
+          <a href='https://youtu.be/re96UgMk6GQ' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>Simon Peyton-Jones: Escape from the ivory tower: the Haskell journey</a>
+        </li>
+      
+        <li>
+          <a href='https://youtu.be/b9FagOVqxmI' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>Haskell Amuse-Bouche</a>
+        </li>
+      
+        <li>
+          <a href='https://youtu.be/US8QG9I1XW0' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>Functional architecture - The pits of success - Mark Seemann</a>
+        </li>
+      
+    </ul>
+  <h2 id='reading' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700'>Reading</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <a href='https://www.fpcomplete.com/haskell/promote/' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>Promote Haskell</a>
+        </li>
+      
+        <li>
+          <a href='https://patrickmn.com/software/the-haskell-pyramid/' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>The Haskell Pyramid</a>
+        </li>
+      
+        <li>
+          <a href='https://byorgey.wordpress.com/2009/01/12/abstraction-intuition-and-the-monad-tutorial-fallacy/' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>Abstraction, intuition, and the “monad tutorial fallacy”</a>
+        </li>
+      
+        <li>
+          <a href='https://mkremins.github.io/blog/doors-headaches-intellectual-need/' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>Locked doors, headaches, and intellectual need</a>
+        </li>
+      
+        <li>
+          <a href='https://lexi-lambda.github.io/blog/2019/10/19/empathy-and-subjective-experience-in-programming-languages/' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>Empathy and subjective experience in programming languages</a>
+        </li>
+      
+        <li>
+          <a href='https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>Parse, don’t validate</a>
+        </li>
+      
+        <li>
+          <a href='https://lexi-lambda.github.io/blog/2020/01/19/no-dynamic-type-systems-are-not-inherently-more-open/' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>No, dynamic type systems are not inherently more open</a>
+        </li>
+      
+        <li>
+          <a href='https://lexi-lambda.github.io/blog/2020/08/13/types-as-axioms-or-playing-god-with-static-types/' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>Types as axioms, or: playing god with static types</a>
+        </li>
+      
+    </ul>
+  <h2 id='slides' class='inline-block mt-6 mb-4 text-4xl font-bold text-gray-700'>Slides</h2>
+    <ul class='my-3 ml-6 space-y-1 list-disc'>
+      
+        <li>
+          <a href='https://www.snoyman.com/reveal/what-makes-haskell-unique-2020/' class='text-blue-600 hover:underline' target='_blank' rel='noopener'>What Makes Haskell Unique</a>
+        </li>
+      
+    </ul>
   
+
+  <!-- What goes in this file will appear below the note body-->
+</article>
+            <div class='flex flex-col lg:flex-row lg:space-x-2'>
+              
+              
+            </div>
+            
+  <section class='flex flex-wrap items-end justify-center my-4 space-x-2 space-y-2 font-mono text-sm'>
+    
+  </section>
+
+            <!-- What goes in this file will at the very end of the main div -->
+          </main>
         </div>
-      </main>
+      </div>
       <footer class='flex items-center justify-center mt-2 mb-8 space-x-4 text-center text-gray-800'>
 	
 	<div>
@@ -964,3 +1122,4 @@
 </body>
 
 </html>
+
