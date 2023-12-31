@@ -10,7 +10,7 @@ In this step we'll get a Haskell environment up and running.
 
 We can run Haskell programs in the browser without installing anything:
 
-https://replit.com/languages/haskell
+https://play.haskell.org/
 
 To run Haskell on our computer, we have to install the GHC[^1].
 

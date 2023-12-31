@@ -1,0 +1,120 @@
+@font-face {
+	font-family: 'Source Serif';
+	font-style: normal;
+	src:
+		url(/static/fonts/SourceSerif/SourceSerif4Variable-Roman.otf.woff2) format("woff2"),
+		url(/static/fonts/SourceSerif/SourceSerif4Variable-Roman.otf) format("opentype");
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Source Serif';
+	font-style: italic;
+	src:
+		url(/static/fonts/SourceSerif/SourceSerif4Variable-Italic.otf.woff2) format("woff2"),
+		url(/static/fonts/SourceSerif/SourceSerif4Variable-Italic.otf) format("opentype");
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Source Sans';
+	font-style: normal;
+	src:
+		url(/static/fonts/SourceSans/SourceSans3VF-Roman.otf.woff2) format("woff2"),
+		url(/static/fonts/SourceSans/SourceSans3VF-Roman.otf) format("opentype");
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Source Sans';
+	font-style: italic;
+	src:
+		url(/static/fonts/SourceSans4/SourceSans3VF-Italic.otf.woff2) format("woff2"),
+		url(/static/fonts/SourceSans4/SourceSans3VF-Italic.otf) format("opentype");
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Source Code';
+	font-style: normal;
+	src:
+		url(/static/fonts/SourceCode/SourceCodeVariable-Roman.otf.woff2) format("woff2"),
+		url(/static/fonts/SourceCode/SourceCodeVariable-Roman.otf) format("opentype");
+	font-display: swap;
+}
+@font-face {
+	font-family: 'Source Code';
+	font-style: italic;
+	src:
+		url(/static/fonts/SourceCode/SourceCodeVariable-Italic.otf.woff2) format("woff2"),
+		url(/static/fonts/SourceCode/SourceCodeVariable-Roman.otf) format("opentype");
+	font-display: swap;
+}
+
+body {
+	font-family: 'Source Serif', serif;
+	/* font-variation-settings: 'wght'300; */
+	background: url(/static/background.jpg);
+}
+
+@media only screen and (min-width: 480px) {
+	main {
+		padding: 2em 3em!important;
+	}
+}
+
+article nav {
+	margin-top: 0.75rem;
+}
+
+a.mavenLinkBold {
+	font-variation-settings: 'wght'500;
+}
+
+strong {
+	font-variation-settings: 'wght'500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+.header-font {
+	font-family: inherit;
+}
+
+svg {
+	display: inline-block!important;
+}
+
+code {
+	font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+	color: hsl(230, 8%, 24%);
+	line-height: 1.5;
+}
+
+code::before {
+	content: attr(data-filename);
+	display: inline-block;
+	float: right;
+	opacity: 0.5;
+}
+
+*::selection {
+	background: hsl(230, 1%, 90%);
+	color: inherit;
+}
+
+/* Code blocks */
+pre {
+	padding: 1em;
+	margin: 0.5em 0;
+	overflow: auto;
+	border-radius: 0.3em;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: 0.2em 0.3em;
+	border-radius: 0.3em;
+	white-space: normal;
+}

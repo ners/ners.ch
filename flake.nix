@@ -17,14 +17,6 @@
         flake-parts.follows = "flake-parts";
         haskell-flake.follows = "haskell-flake";
         nixpkgs.follows = "nixpkgs";
-        tailwind.follows = "tailwind-haskell";
-      };
-    };
-    tailwind-haskell = {
-      url = "github:srid/tailwind-haskell";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
       };
     };
     flake-utils.url = "github:numtide/flake-utils";

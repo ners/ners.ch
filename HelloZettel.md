@@ -49,10 +49,10 @@ primeDivisors n = [ p | p <- takeWhile ((<=n) . (^2)) primes, n `mod` p == 0 ]
 
 ### Diagrams
 
-<code class="mermaid">
+```mermaid
 graph LR
 	main --> primes
 	primes --> isPrime
 	isPrime --> primeDivisors
 	primeDivisors --> primes
-</code>
+```
