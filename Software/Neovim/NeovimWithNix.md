@@ -1,8 +1,8 @@
 # Configure your Neovim with Nix
 
-Neovim is rather barebones out of the box. This may make some people think it is only useable for trivial tasks.
+[[Neovim]] is rather barebones out of the box. This may make some people think it is only useable for trivial tasks.
 
-However, there is a thriving plugin ecosystem that can extend Neovim with many IDE-like features.
+However, there is a thriving plugin ecosystem that can extend Neovim with many [[UnixAsIDE|IDE-like]] features.
 
 After investing time into making it your own, the best way to make your config [[Nix/Reproducibility|reproducible]] is with [[Nix/HomeManager]].
 
@@ -69,7 +69,45 @@ in
 
 With this in place, we may now populate the directory `neovim/plugins/` with
  - Nix modules that specify plugins and their configs
- - Lua configuration that specifies pure config
+ - Lua configuration that specifies pure config, evaluated at startup
+
+## Editor configuration
+
+One would normally write their startup configuration into a file called `~/.config/nvim/init.vim` or `~/.config/nvim/init.lua`.
+
+However, thanks to our modular design, we can treat our configuration as a plugin.
+Let's create `neovim/plugins/config.lua`:
+
+{ data-filename="neovim/plugins/config.lua" }
+```lua
+local opt = vim.opt
+local g = vim.g
+local fn = vim.fn
+
+-- Use space as leader key
+g.mapleader = ' '
+
+-- Set mouse mode to all modes
+opt.mouse = 'a'
+
+-- Display encoding
+opt.encoding = "utf-8"
+
+-- File write encoding
+opt.fileencoding = "utf-8"
+
+-- Use the system clipboard
+opt.clipboard = "unnamedplus"
+
+-- Tab control
+opt.smarttab = true -- tab respects 'tabstop', 'shiftwidth', and 'softtabstop'
+opt.tabstop = 4 -- the visible width of tabs
+opt.softtabstop = 4 -- edit as if the tabs are 4 characters wide
+opt.shiftwidth = 4 -- number of spaces to use for indent and unindent
+opt.shiftround = true -- round indent to a multiple of 'shiftwidth'
+
+...
+```
 
 ## Example plugins
 

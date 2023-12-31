@@ -1,9 +1,13 @@
 # Neovim for Haskell developers
 
-If you [[NeovimWithNix]], then you can use this snippet to set it up for [[Haskell]], using [Marc Jakobi]'s excellent [haskell-tools] plugin.
+<img class="header-logo" style="max-height: 6em;" src="https://raw.githubusercontent.com/mrcjkb/haskell-tools.nvim/master/nvim-haskell.svg"/>
+
+[[Neovim]] is the best [[Haskell]] editor, thanks in large part to [Marc Jakobi]'s excellent [haskell-tools] plugin.
+
+If you [[NeovimWithNix|configure your Neovim with Nix]] you can use this snippet to get started quickly.
 
 > [!note]
-> If you like a plugin, please consider :star: starring it on GitHub. It costs you nothing and the developers appreciate it!
+> Please consider :star: starring [haskell-tools] on GitHub. Developers appreciate it!
 
 { data-filename="neovim/plugins/haskell.nix" }
 ```nix

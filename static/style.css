@@ -89,9 +89,19 @@ svg {
 }
 
 .header-logo {
-	max-width: 8em;
+	max-height: 10em;
 	float: right;
 	margin-left: 2em;
+	margin-bottom: 2em;
+}
+
+@media only screen and (max-width: 480px) {
+	.header-logo {
+		max-height: 6em;
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
 }
 
 code {
