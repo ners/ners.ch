@@ -1,7 +1,3 @@
----
-slug: hello-zettel
----
-
 # Hello, Zettel!
 
 Thanks to rapid advances in technology, it's never been easier to put words on the Internet.

@@ -3,6 +3,7 @@
 <link href="/static/catppuccin-latte.css" rel="stylesheet" />
 
 <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-nix.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/plugins/filter-highlight-all/prism-filter-highlight-all.min.js"></script>
 <script>
 Prism.plugins.filterHighlightAll.reject.add(value => value.language === "mermaid");

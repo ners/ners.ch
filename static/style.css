@@ -59,16 +59,18 @@ body {
 	}
 }
 
+article p,
 article nav {
+	margin-bottom: 0.75rem;
 	margin-top: 0.75rem;
 }
 
 a.mavenLinkBold {
-	font-variation-settings: 'wght'500;
+	font-variation-settings: 'wght'600;
 }
 
 strong {
-	font-variation-settings: 'wght'500;
+	font-variation-settings: 'wght'600;
 }
 
 h1,
@@ -84,6 +86,12 @@ header,
 
 svg {
 	display: inline-block!important;
+}
+
+.header-logo {
+	max-width: 8em;
+	float: right;
+	margin-left: 2em;
 }
 
 code {
@@ -117,4 +125,96 @@ pre {
 	padding: 0.2em 0.3em;
 	border-radius: 0.3em;
 	white-space: normal;
+}
+
+
+/* Callouts */
+.callout {
+	background-color: #f5f5f5;
+	padding: 0.3em 1em;
+	border-radius: 0.5em;
+	margin-bottom: 1em;
+	display: flex;
+	flex-direction: row;
+}
+
+.callout[data-callout="note"] {
+	--callout-color: 8, 109, 221;
+}
+
+.callout[data-callout="info"] {
+	--callout-color: 8, 109, 221;
+}
+
+.callout[data-callout="tip"] {
+	--callout-color: 8, 191, 188;
+}
+
+.callout[data-callout="warning"] {
+	--callout-color: 236, 117, 0;
+}
+
+.callout[data-callout="failure"] {
+	--callout-color: 233, 49, 71;
+}
+
+.callout {
+	background-color: rgba(var(--callout-color), 0.1);
+}
+
+.callout .callout-title {
+	color: rgb(var(--callout-color));
+}
+
+.callout-title {
+	width: 1.5em;
+	margin: 0.65rem 0.3em 0 0.2em;
+}
+
+.callout-content {
+	flex: 1;
+}
+
+.callout-title .callout-title-inner {
+	display: none
+}
+
+/* External link icon */
+a[data-linkicon=""]::after {
+	content: ""
+}
+
+a[data-linkicon=none]::after {
+	content: ""
+}
+
+a[data-linkicon="external"]::after {
+	content: url('data:image/svg+xml,\
+	<svg xmlns="http://www.w3.org/2000/svg" height="0.7em" viewBox="0 0 20 20"> \
+		<g style="stroke:gray;stroke-width:1"> \
+			<line x1="5" y1="5" x2="5" y2="14" /> \
+			<line x1="14" y1="9" x2="14" y2="14" /> \
+			<line x1="5" y1="14" x2="14" y2="14" /> \
+			<line x1="5" y1="5" x2="9" y2="5"	/> \
+			<line x1="10" y1="2" x2="17" y2="2"	/> \
+			<line x1="17" y1="2" x2="17" y2="9" /> \
+			<line x1="10" y1="9" x2="17" y2="2" style="stroke-width:1.0" /> \
+		</g> \
+	</svg>');
+}
+
+a[data-linkicon="external"][href^="mailto:"]::after {
+	content: url('data:image/svg+xml,\
+		<svg \
+			xmlns="http://www.w3.org/2000/svg" \
+			height="0.7em" \
+			fill="none" \
+			viewBox="0 0 24 24" \
+			stroke="gray" \
+			stroke-width="2"> \
+			<path \
+				stroke-linecap="round" \
+				stroke-linejoin="round" \
+				d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /> \
+		</svg>');
 }
