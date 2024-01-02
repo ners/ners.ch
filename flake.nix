@@ -19,7 +19,6 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
-    flake-utils.url = "github:numtide/flake-utils";
     nix-filter.url = "github:numtide/nix-filter";
     flake-compat = {
       url = "github:edolstra/flake-compat";
@@ -32,19 +31,23 @@
   };
 
   outputs = inputs:
-    inputs.flake-utils.lib.eachDefaultSystem (system:
-      let
-        emanote-overlay = self: super: {
-          emanote = inputs.emanote.packages.${system}.default;
-        };
-        pkgs = import inputs.nixpkgs {
-          inherit system;
-          overlays = [ inputs.nix-filter.overlays.default emanote-overlay ];
-        };
-      in
+    let
+      inherit (inputs.nixpkgs) lib;
+      foreach = xs: f: with lib; foldr recursiveUpdate { } (
+        if isList xs then map f xs
+        else if isAttrs xs then mapAttrsToList f xs
+        else error "foreach: expected list or attrset but got ${builtins.typeOf xs}"
+      );
+      emanote-overlay = _: prev: {
+        emanote = inputs.emanote.packages.${prev.system}.default;
+      };
+    in
+    foreach inputs.nixpkgs.legacyPackages (system: pkgs':
+      let pkgs = pkgs'.extend emanote-overlay; in
       {
-        packages.default = pkgs.callPackage ./default.nix { };
-        devShells.default = pkgs.callPackage ./shell.nix { };
-        formatter = pkgs.nixpkgs-fmt;
+        legacyPackages.${system} = pkgs;
+        packages.${system}.default = pkgs.callPackage ./default.nix { inherit inputs; };
+        devShells.${system}.default = pkgs.callPackage ./shell.nix { };
+        formatter.${system} = pkgs.nixpkgs-fmt;
       });
 }

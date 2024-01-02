@@ -1,10 +1,10 @@
 # Programming without computers
 
 > Programs must be written for people to read, and only incidentally for machines to execute.
-> 
-> — Harold Abelson, [Structure and Interpretation of Computer Programs][sicp]
+> :::cite
+> Abelson, H., & Sussman, G. J. (2016). [Structure and Interpretation of Computer Programs][sicp], Second Edition. The MIT Press
 
-[sicp]: https://mitpress.mit.edu/sites/default/files/sicp/full-text/book/book-Z-H-7.html
+[sicp]: https://web.mit.edu/6.001/6.037/sicp.pdf
 
 Programming has as little to do with computers as astronomy has to do with
 telescopes. Computers allow us to evaluate some aspects of a program, but the
@@ -29,7 +29,7 @@ either by a compiler or an interpreter. But that's not the programmer's intent,
 either. One writes a program to express computation, not the means by which it
 will be evaluated.
 
-Consider the following program:
+Consider the following [[Haskell]] program:
 
 { data-filename="primes.hs" }
 ```haskell

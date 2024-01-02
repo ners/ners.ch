@@ -1,4 +1,4 @@
-# Configure your Neovim with Nix
+# Configuring Neovim with Nix
 
 [[Neovim]] is rather barebones out of the box. This may make some people think it is only useable for trivial tasks.
 

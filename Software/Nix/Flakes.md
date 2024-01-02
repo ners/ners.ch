@@ -1,7 +1,8 @@
 Flakes are an [experimental feature][experimental] of [[Nix]], introduced in version 2.4.
 
+## Enable flakes
 To use flakes, you must enable them in your configuration:
- - on [[NixOS]] or any system with [[HomeManager|Home Manager]]:
+ - system-wide on [[NixOS]] or user-wide with [[HomeManager|Home Manager]]:
    ```nix
    nix.settings.experimental-features = [ "nix-command" "flakes" ];
    ```

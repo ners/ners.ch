@@ -5,3 +5,5 @@ template:
   name: /templates/layouts/book
   iconUrl: /static/ners.jpg
   urlStrategy: pretty
+  sidebar:
+    enable: false

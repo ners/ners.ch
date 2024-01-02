@@ -2,11 +2,12 @@
 
 Reproducibile builds are an often-cited benefit of the [[Nix]] ecosystem. But is reproducibility really?
 
-Per the [reproducible builds project](https://reproducible-builds.org/):
 
 > Reproducible builds are a set of software development practices that create an independently-verifiable path from source to binary code.
 >
 > A build is reproducible if given the same source code, build environment and build instructions, any party can recreate bit-by-bit identical copies of all specified artifacts.
+> :::cite
+> [Reproducible builds project](https://reproducible-builds.org/)
 
 In other words, by building software reproducibly, we have strong guarantees that a task that works today will continue to work tomorrow.
 

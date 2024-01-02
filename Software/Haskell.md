@@ -1,8 +1,8 @@
-<img class="header-logo" src="./static/sloth.svg"/>
+<img class="header-logo" src="./static/haskell.svg"/>
 
-Haskell is an advanced, purely functional programming language.
+Haskell is an advanced, purely functional, general-purpose programming language.
 
 The mascot of the Haskell community is the sloth.
-This is because lazy evaluation is Haskell's most distinguishing feature.
+This is because [[LazyEvaluation|lazy evaluation]] is Haskell's most distinguishing feature.
 
-[logos]: https://wiki.haskell.org/Haskell_logos
+<img style="height:5em;" src="./static/sloth.svg"/>

@@ -49,6 +49,7 @@
 
 body {
 	font-family: 'Source Serif', serif;
+	font-size: 18px;
 	/* font-variation-settings: 'wght'300; */
 	background: url(/static/background.jpg);
 }
@@ -61,8 +62,8 @@ body {
 
 article p,
 article nav {
-	margin-bottom: 0.75rem;
 	margin-top: 0.75rem;
+	margin-bottom: 0.75rem;
 }
 
 a.mavenLinkBold {
@@ -95,13 +96,59 @@ svg {
 	margin-bottom: 2em;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 1000px) {
 	.header-logo {
 		max-height: 6em;
 		float: none;
 		margin-left: auto;
 		margin-right: auto;
 	}
+}
+
+blockquote {
+	position: relative;
+	padding-left: 3em;
+	margin: 1.5em 0 2em 0;
+}
+
+blockquote .cite {
+	font-size: 90%;
+	opacity: 0.8;
+	font-style: italic;
+}
+
+blockquote::before,
+blockquote::after {
+	font-size: 500%;
+	position: absolute;
+	opacity: 0.2;
+}
+
+blockquote::before {
+	content: "“";
+	left: 0.5rem;
+	top: -2rem;
+}
+	
+.footnotes {
+	border-top: .15em solid gray;
+	padding-top: 0.5em;
+	margin-top: 2em;
+	opacity: 0.7;
+}
+
+.footnotes li {
+	display: flex;
+	flex-direction: row;
+	gap: 1em;
+}
+
+.footnotes i {
+
+}
+
+.footnotes i::after {
+	content: ".";
 }
 
 code {
@@ -137,6 +184,12 @@ pre {
 	white-space: normal;
 }
 
+/* Heist error element */
+.error {
+  color: lightcoral;
+  font-size: 90%;
+  font-family: monospace;
+}
 
 /* Callouts */
 .callout {

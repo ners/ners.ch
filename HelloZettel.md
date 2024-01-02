@@ -52,3 +52,11 @@ graph LR
 	isPrime --> primeDivisors
 	primeDivisors --> primes
 ```
+
+### Tables
+
+| Right | Left | Default | Centre |
+|------:|:-----|---------|:------:|
+|   12  |  12  |    12   |    12  |
+|  123  |  123 |   123   |   123  |
+|    1  |    1 |     1   |     1  |

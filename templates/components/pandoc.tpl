@@ -1,6 +1,6 @@
 <ema:note:pandoc>
   <Para>
-    <p class="mb-3">
+    <p>
       <inlines />
     </p>
   </Para>
@@ -21,8 +21,7 @@
     </cite>
   </Cite>
   <BlockQuote>
-    <blockquote
-      class="py-0.5 px-4 mb-3 italic border-l-4 bg-gray-50 text-gray-600 border-gray-400 quote">
+    <blockquote>
       <blocks />
     </blockquote>
   </BlockQuote>
@@ -45,27 +44,23 @@
     </dl>
   </DefinitionList>
   <Note:Ref>
-    <!-- DoNotFormat -->
-    <!-- We use JavaScript because anchor links won't work if there is a <base> tag;
-         see https://stackoverflow.com/a/34765348 
-    -->
-    <sup class="px-0.5"><a class="text-${theme}-600 hover:underline" href="javascript:;" onclick="document.location.hash='#fn${footnote:idx}';"><footnote:idx /></a></sup>
-    <!-- DoNotFormat -->
+    <sup class="px-0.5">
+      <a class="text-${theme}-600 hover:underline" href="${ema:note:url}#fn${footnote:idx}">
+        <footnote:idx />
+      </a>
+    </sup>
   </Note:Ref>
   <Note:List>
-    <div title="Footnotes"
-      class="pt-2 mt-8 space-y-1 text-gray-500 transform border-t-2">
+    <div title="Footnotes" class="footnotes">
       <header class="font-semibold">Footnotes</header>
-      <footnote>
-        <div id="fn${footnote:idx}">
-          <header class="inline-block italic">
-            <footnote:idx />.
-          </header>
-          <div class="inline-block mb-2 ml-4">
-            <footnote:content />
-          </div>
-        </div>
-      </footnote>
+      <ul>
+        <footnote>
+          <li id="fn${footnote:idx}">
+            <p><i><footnote:idx /></i></p>
+            <div><p><footnote:content /></p></div>
+          </li>
+        </footnote>
+      </ul>
     </div>
   </Note:List>
 
@@ -87,21 +82,23 @@
       </OrderedList:Items>
     </ul>
   </OrderedList>
-
+  <HorizontalRule>
+    <hr class="mb-3" />
+  </HorizontalRule>
   <!-- TODO: Expand the above kind of overriding (full DOM control) to other AST nodes (below) -->
   <PandocLink class="text-${theme}-600">
     <Internal class="mavenLinkBold hover:underline" />
     <External class="hover:underline" target="_blank" rel="noopener" />
   </PandocLink>
-  <CodeBlock class="py-0.5 mb-3 text-sm" />
+  <CodeBlock />
   <Code class="py-0.5 px-0.5 bg-gray-100" />
   <Header>
     <h1 class="pb-2 mb-2 text-5xl font-bold text-center" />
-    <h2 class="inline-block mt-6 mb-4 text-4xl font-bold text-gray-700" />
-    <h3 class="mt-6 mb-2 text-3xl font-bold text-gray-700" />
-    <h4 class="mt-6 mb-2 text-2xl font-bold text-gray-700" />
-    <h5 class="mt-6 mb-2 text-xl font-bold text-gray-700" />
-    <h6 class="mt-6 mb-2 text-xl font-bold text-gray-700" />
+    <h2 class="mt-8 mb-6 text-4xl font-bold text-700" />
+    <h3 class="mt-6 mb-2 text-3xl font-bold text-700" />
+    <h4 class="mt-6 mb-2 text-2xl font-bold text-700" />
+    <h5 class="mt-6 mb-2 text-xl font-bold text-700" />
+    <h6 class="mt-6 mb-2 text-xl font-bold text-700" />
   </Header>
 
 </ema:note:pandoc>

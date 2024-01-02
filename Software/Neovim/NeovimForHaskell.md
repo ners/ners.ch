@@ -1,4 +1,4 @@
-# Neovim for Haskell developers
+# Neovim for Haskell
 
 <img class="header-logo" style="max-height: 6em;" src="https://raw.githubusercontent.com/mrcjkb/haskell-tools.nvim/master/nvim-haskell.svg"/>
 
@@ -19,11 +19,6 @@ If you [[NeovimWithNix|configure your Neovim with Nix]] you can use this snippet
   ];
 
   xdg.configFile."nvim/ftplugin/haskell.lua".text = ''
-    vim.bo.expandtab = true
-    vim.bo.shiftwidth = 4
-    vim.bo.softtabstop = 4
-    vim.bo.tabstop = 4
-
     local ht = require('haskell-tools')
     local bufnr = vim.api.nvim_get_current_buf()
     local opts = { noremap = true, silent = true, buffer = bufnr, }

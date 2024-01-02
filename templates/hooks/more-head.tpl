@@ -1,6 +1,6 @@
 <!-- What goes in this file will appear on near the end of <head>-->
-<link href="/static/style.css?version=202312311656390100" rel="stylesheet" />
-<link href="/static/catppuccin-latte.css?version=202312311656390100" rel="stylesheet" />
+<link href="/static/style.css?version=202401021631270100" rel="stylesheet" />
+<link href="/static/catppuccin-latte.css?version=202401021631270100" rel="stylesheet" />
 
 <script src="https://cdn.jsdelivr.net/npm/prismjs/prism.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/prismjs/components/prism-nix.min.js"></script>

@@ -1,8 +1,11 @@
-{ runCommand
-, nix-filter
+{ inputs
+, runCommand
 , emanote
 }:
 
+let
+  nix-filter = inputs.nix-filter.lib;
+in
 runCommand "website"
 {
   src = nix-filter {
