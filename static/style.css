@@ -152,7 +152,8 @@ blockquote::before {
 }
 
 code {
-	font-family: "Fira Code", "Fira Mono", Menlo, Consolas, "DejaVu Sans Mono", monospace;
+	font-family: "Fira Code", monospace;
+	font-variant-ligatures: none;
 	color: hsl(230, 8%, 24%);
 	line-height: 1.5;
 }
@@ -193,45 +194,18 @@ pre {
 
 /* Callouts */
 .callout {
-	background-color: #f5f5f5;
-	padding: 0.3em 1em;
 	border-radius: 0.5em;
-	margin-bottom: 1em;
 	display: flex;
 	flex-direction: row;
 }
 
-.callout[data-callout="note"] {
-	--callout-color: 8, 109, 221;
-}
-
-.callout[data-callout="info"] {
-	--callout-color: 8, 109, 221;
-}
-
-.callout[data-callout="tip"] {
-	--callout-color: 8, 191, 188;
-}
-
-.callout[data-callout="warning"] {
-	--callout-color: 236, 117, 0;
-}
-
-.callout[data-callout="failure"] {
-	--callout-color: 233, 49, 71;
-}
-
-.callout {
-	background-color: rgba(var(--callout-color), 0.1);
-}
-
-.callout .callout-title {
-	color: rgb(var(--callout-color));
-}
-
 .callout-title {
-	width: 1.5em;
-	margin: 0.65rem 0.3em 0 0.2em;
+	width: 3em;
+	margin-right: 0.75em;
+	background-image: url('/static/pointing_hand.jpg');
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position-y: center;
 }
 
 .callout-content {

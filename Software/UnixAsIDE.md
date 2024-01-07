@@ -22,7 +22,7 @@ The interesting thing about this problem for shell users is that well-designed a
 
 This attitude isn’t the preserve of battle-hardened Unix greybeards; you can see it in another form in the way the modern incarnations of the two grand old text editors Emacs and Vi (GNU Emacs and Vim) have such active communities developing plugins to make them support pretty much any kind of editing task. There are plugins to do pretty much anything you could really want to do in programming in both editors, and like any Vim junkie I could spout off at least six or seven that I feel are “essential”.
 
-However, it often becomes apparent to me when reading about these efforts that the developers concerned are trying to make these text editors into IDEs in their own right. There are posts about [never needing to leave Vim](http://kevinw.github.com/2010/12/15/this-is-your-brain-on-vim/), or [never needing to leave Emacs](http://news.ycombinator.com/item?id=819447). But I think that trying to shoehorn Vim or Emacs into becoming something that it’s not isn’t quite thinking about the problem in the right way. Bram Moolenaar, the author of Vim, appears to agree to some extent, as you can see by reading [`:help design-not`](http://vimdoc.sourceforge.net/htmldoc/develop.html#design-not). The shell is only ever a Ctrl+Z away, and its mature, highly composable toolset will afford you more power than either editor ever could.
+However, it often becomes apparent to me when reading about these efforts that the developers concerned are trying to make these text editors into IDEs in their own right. There are posts about [never needing to leave Vim](https://kev.town/2010/12/15/this-is-your-brain-on-vim/), or [never needing to leave Emacs](http://news.ycombinator.com/item?id=819447). But I think that trying to shoehorn Vim or Emacs into becoming something that it’s not isn’t quite thinking about the problem in the right way. Bram Moolenaar, the author of Vim, appears to agree to some extent, as you can see by reading [`:help design-not`](http://vimdoc.sourceforge.net/htmldoc/develop.html#design-not). The shell is only ever a Ctrl+Z away, and its mature, highly composable toolset will afford you more power than either editor ever could.
 
 ## What I’m not trying to say
 
@@ -30,6 +30,7 @@ I don’t think IDEs are bad; I think they’re brilliant, which is why I’m tr
 
 <br>
 
-*Read the rest of the series [here][source].*
+> [!note]
+> Read the rest of the series [here][source].
 
 [source]: https://blog.sanctum.geek.nz/series/unix-as-ide/

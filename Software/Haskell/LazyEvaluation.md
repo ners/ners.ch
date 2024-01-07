@@ -25,14 +25,14 @@ Non-strict semantics:
 
 With non-strict semantics we can define elegant control flow abstractions:
 ```haskell
--- What happens if one of the parameters is ⊥?
-ifThenElse :: Bool -> a -> a -> a
-ifThenElse True x _ = x
-ifThenElse False _ y = y
+unless :: Applicative f => Bool -> f () -> f ()
+unless True x = x
+unless False _ = pure ()
 
--- What happens if given an infinite list?
-any :: (a -> Bool) -> [a] -> Bool
-any p = or . map p
+any :: (Foldable f, Functor f) => (a -> Bool) -> f a -> Bool
+any p = or . fmap p
+
+unless (any isPrime [0,1..]) $ fail "No prime numbers found in ℕ!"
 ```
 
 Haskell is one of the few modern languages to have non-strict semantics by default.

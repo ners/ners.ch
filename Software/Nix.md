@@ -4,5 +4,5 @@
 
 *noun*
 
-1. a package manager
+1. a package manager for any Linux distribution and macOS
 2. a functional programming language

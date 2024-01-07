@@ -33,8 +33,7 @@ with lib;
 let
   plugins = pipe ./plugins [
     readDir
-    attrNames
-    (map (fn: ./plugins/${fn}))
+    (mapAttrs (name: _: ./plugins/${fn}))
   ];
   nixPlugins = filter (hasSuffix ".nix") plugins;
   luaPlugins = filter (hasSuffix ".lua") plugins;
@@ -57,13 +56,12 @@ in
   };
 
   # Import all the modules in ./plugins/*.nix
-  imports = nixPlugins;
+  imports = attrValues nixPlugins;
 
   # Link Lua files from ./plugins/*.lua to ~/.config/nvim/plugin/
-  xdg.configFile = pipe luaPlugins [
-    (map (fn: { "nvim/plugin/${name}".source = fn; }))
-    (foldr recursiveUpdate { })
-  ];
+  xdg.configFile = mapAttrs'
+    (name: source: nameValuePair "nvim/plugin/${name}" { inherit source; })
+    luaPlugins;
 }
 ```
 

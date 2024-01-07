@@ -1,4 +1,9 @@
 {
+  nixConfig = {
+    extra-substituters = "https://cache.ners.ch/haskell";
+    extra-trusted-public-keys = "haskell:WskuxROW5pPy83rt3ZXnff09gvnu80yovdeKDw5Gi3o=";
+  };
+
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     haskell-flake.url = "github:srid/haskell-flake";
