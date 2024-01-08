@@ -9,7 +9,7 @@
 
 [ahoh]: https://www.microsoft.com/en-us/research/wp-content/uploads/2016/07/history.pdf
 
-Laziness = [non-strict semantics](#non-strict-semantics) + [sharing](#sharing)
+Laziness = [non-strict semantics](./LazyEvaluation.md#non-strict-semantics) + [sharing](./LazyEvaluation.md#sharing)
 
 Laziness is a common implementation technique for non-strict languages, but it is not the only possible one.
 
