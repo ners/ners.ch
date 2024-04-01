@@ -28,7 +28,7 @@ Then create the following [[Flakes|Nix flake]]:
       foreach = xs: f: with lib; foldr recursiveUpdate { } (
         if isList xs then map f xs
         else if isAttrs xs then mapAttrsToList f xs
-        else error "foreach: expected list or attrset but got ${typeOf xs}"
+        else throw "foreach: expected list or attrset but got ${typeOf xs}"
       );
       hsSrc = root: inputs.nix-filter {
         inherit root;

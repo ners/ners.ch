@@ -1,7 +1,6 @@
 # Reproducibility
 
-Reproducibile builds are an often-cited benefit of the [[Nix]] ecosystem. But is reproducibility really?
-
+Reproducibile builds are an often-cited benefit of the [[Nix]] ecosystem. But what is reproducibility really?
 
 > Reproducible builds are a set of software development practices that create an independently-verifiable path from source to binary code.
 >

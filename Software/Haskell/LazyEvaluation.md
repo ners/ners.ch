@@ -16,11 +16,11 @@ Laziness is a common implementation technique for non-strict languages, but it i
 ## Non-strict semantics
 
 Strict semantics:
- - reduce expressions from inside out, e.g. evaluating `*` first in `a+(b*c)`
+ - reduce expressions from inside out, e.g. evaluating $\times$ first in $a+(b\times c)$
  - a subexpression that evaluates to [⊥] (i.e. an error or endless loop) will be found and propagated outwards
 
 Non-strict semantics:
- - reduce expressions from outside in, e.g. evaluating `+` first in `a+(b*c)`
+ - reduce expressions from outside in, e.g. evaluating $+$ first in $a+(b\times c)$
  - a subexpression that evaluates to ⊥ may be eliminated by outer reductions
 
 With non-strict semantics we can define elegant control flow abstractions:
@@ -60,34 +60,33 @@ In the following example, `fibSlow` is slower than `fibFast` because it redefine
 
 ```haskell
 fibSlow x =
-    let fib' 0 = 0
-        fib' 1 = 1
-        fib' n = fib (n - 1) + fib (n - 2)
-    in  map fib' [0 ..] !! x
+    let fib 0 = 0
+        fib 1 = 1
+        fib n = fibSlow (n - 1) + fibSlow (n - 2)
+    in  map fib [0 ..] !! x
 
 fibFast =
-    let fib' 0 = 0
-        fib' 1 = 1
-        fib' n = fib (n - 1) + fib (n - 2)
-    in  (map fib' [0 ..] !!)
+    let fib 0 = 0
+        fib 1 = 1
+        fib n = fibFast (n - 1) + fibFast (n - 2)
+    in  (map fib [0 ..] !!)
 ```
 
 You can also use `where` for sharing, but the performance impact of the eta reduction becomes harder to see:
 
 ```haskell
-fibSlow x = map fib' [0 ..] !! x
+fibSlow x = map fib [0 ..] !! x
     where
-      fib' 0 = 0
-      fib' 1 = 1
-      fib' n = fib (n - 1) + fib (n - 2)
-
+      fib 0 = 0
+      fib 1 = 1
+      fib n = fibSlow (n - 1) + fibSlow (n - 2)
 
 -- This eta reduction is non-trivial!
-fibFast = (map fib' [0 ..] !!)
+fibFast = (map fib [0 ..] !!)
     where
-      fib' 0 = 0
-      fib' 1 = 1
-      fib' n = fib (n - 1) + fib (n - 2)
+      fib 0 = 0
+      fib 1 = 1
+      fib n = fibFast (n - 1) + fibFast (n - 2)
 ```
 
 - [Lazy vs. non-strict - Haskell Wiki](https://wiki.haskell.org/Lazy_vs._non-strict)
