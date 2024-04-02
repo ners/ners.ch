@@ -1,6 +1,6 @@
 # Lazy evaluation
 
-<img class="header-logo" src="./static/sloth.svg"/>
+<img class="header-logo" src="/static/sloth.svg"/>
 
 > Laziness was undoubtedly the single theme that united the various groups that contributed to Haskell's design.
 > Once we were committed to a *lazy* language, a pure one was inescapable.

@@ -1,4 +1,4 @@
-<img class="header-logo" src="./static/espresso-machine.svg"/>
+<img class="header-logo" src="/static/espresso-machine.svg"/>
 
 **espresso** /eˈspresəʊ/
 

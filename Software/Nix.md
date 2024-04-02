@@ -1,4 +1,4 @@
-<img class="header-logo" src="./static/nix.svg"/>
+<img class="header-logo" src="/static/nix.svg"/>
 
 **nix** /nɪks/
 

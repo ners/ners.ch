@@ -1,4 +1,4 @@
-<img class="header-logo" src="./static/neovim.svg"/>
+<img class="header-logo" src="/static/neovim.svg"/>
 
 Neovim is a Vim fork and refactor that stays fully compatible with Vim's editing model and Vimscript v1, while adding some modern features on top.
 

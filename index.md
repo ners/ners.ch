@@ -1,6 +1,6 @@
 # ners' Zettelkasten
 
-<img class="header-logo" style="border-radius:8%;" src="./static/ners.jpg"/>
+<img class="header-logo" style="border-radius:8%;" src="/static/ners.jpg"/>
 
 :wave: Hi there. I'm ners. Welcome to my domain.
 

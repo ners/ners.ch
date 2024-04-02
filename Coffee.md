@@ -1,4 +1,4 @@
-<img class="header-logo" src="./static/coffee.svg"/>
+<img class="header-logo" src="/static/coffee.svg"/>
 
 **coffee** /ˈkɒfi/
 

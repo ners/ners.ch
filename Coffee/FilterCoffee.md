@@ -2,7 +2,7 @@
 title: Filter Coffee
 ---
 
-<img class="header-logo" src="./static/chemex.svg"/>
+<img class="header-logo" src="/static/chemex.svg"/>
 
 Also called *pour-over*.
 
