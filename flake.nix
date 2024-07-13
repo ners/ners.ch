@@ -33,7 +33,6 @@
         treefmt-nix.follows = "treefmt-nix";
       };
     };
-    nix-filter.url = "github:numtide/nix-filter";
     flake-root.url = "github:srid/flake-root";
     flake-compat = {
       url = "github:edolstra/flake-compat";
@@ -61,7 +60,7 @@
       let pkgs = pkgs'.extend emanote-overlay; in
       {
         legacyPackages.${system} = pkgs;
-        packages.${system}.default = pkgs.callPackage ./default.nix { inherit inputs; };
+        packages.${system}.default = pkgs.callPackage ./default.nix { };
         devShells.${system}.default = pkgs.callPackage ./shell.nix { };
         formatter.${system} = pkgs.nixpkgs-fmt;
       });

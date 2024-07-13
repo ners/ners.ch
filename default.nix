@@ -1,25 +1,27 @@
-{ inputs
+{ lib
 , runCommand
 , emanote
 }:
 
-let
-  nix-filter = inputs.nix-filter.lib;
-in
 runCommand "website"
 {
-  src = nix-filter {
+  src = with builtins; with lib.fileset; toSource {
     root = ./.;
-    include = [
-      ./static
-      ./templates
-      nix-filter.isDirectory
-      (nix-filter.matchExt "md")
-      (nix-filter.matchExt "yaml")
-    ];
-    exclude = [
-      ./.github
-    ];
+    fileset = fileFilter
+      (file: any file.hasExt [
+        "css"
+        "gif"
+        "hs"
+        "jpg"
+        "lua"
+        "md"
+        "png"
+        "svg"
+        "tpl"
+        "ttf"
+        "woff2"
+        "yaml"
+      ] || file.type == "directory") ./.;
   };
   nativeBuildInputs = [ emanote ];
 } ''
