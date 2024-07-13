@@ -33,7 +33,7 @@ with lib;
 let
   plugins = pipe ./plugins [
     readDir
-    (mapAttrs (name: _: ./plugins/${fn}))
+    (mapAttrs (name: _: ./plugins/${name}))
   ];
   nixPlugins = filter (hasSuffix ".nix") plugins;
   luaPlugins = filter (hasSuffix ".lua") plugins;
