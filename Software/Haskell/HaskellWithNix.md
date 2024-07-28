@@ -80,6 +80,7 @@ Then create the following [[Flakes|Nix flake]]:
       ) // {
       overlays.default = overlay;
     };
+}
 ```
 
 Now you're probably thinking:
