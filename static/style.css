@@ -213,7 +213,7 @@ pre {
 .callout-title {
 	width: 3em;
 	margin-right: 0.75em;
-	background-image: url('/static/pointing_hand.jpg');
+	background-image: url('/static/pointing_hand.svg');
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position-y: center;
