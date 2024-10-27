@@ -34,10 +34,6 @@
       };
     };
     flake-root.url = "github:srid/flake-root";
-    flake-compat = {
-      url = "github:edolstra/flake-compat";
-      flake = false;
-    };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -63,5 +59,6 @@
         packages.${system}.default = pkgs.callPackage ./default.nix { };
         devShells.${system}.default = pkgs.callPackage ./shell.nix { };
         formatter.${system} = pkgs.nixpkgs-fmt;
-      });
+      }
+    );
 }
