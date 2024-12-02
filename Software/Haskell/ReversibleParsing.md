@@ -144,17 +144,36 @@ platform = _Platform /$~ architecture /*/ S.char '-' /*/ kernel
 We can now parse and pretty-print platform strings without any repetition:
 
 ```haskell
-import Data.Attoparsec.Text.Lazy qualified as AP
-import Data.Syntax.Attoparsec.Text.Lazy qualified as S
-import Data.Text.Lazy (Text)
-import Data.Text.Lazy.Builder qualified as T
+import Data.Attoparsec.Text (parseOnly)
+import Data.Syntax.Attoparsec.Text (getParser_)
+import Data.Syntax.Printer.Text (runPrinter_)
+import Data.Text (Text)
+import Data.Text.Lazy (toStrict)
+import Data.Text.Lazy.Builder (toLazyText)
 
 parsePlatform :: Text -> Either String Platform
-parsePlatform t =
-    case AP.parse (S.getParser_ platform <* AP.skipSpace <* AP.endOfInput) t of
-        AP.Fail _ _ err -> Left err
-        AP.Done _ p -> Right p
+parsePlatform = parseOnly $ getParser_ platform
 
-printPlatform :: Platform -> Text
-printPlatform = T.toLazyText . fromRight . S.runPrinter_ platform
+printPlatform :: Platform -> Either String Text
+printPlatform = fmap (toStrict . toLazyText) . runPrinter_ platform
+```
+
+This assumes that every combination of Architecture and Kernel is valid.
+
+If this is not true, then we can filter out invalid values:
+
+```haskell
+import Control.Lens.SemiIso (ASemiIso', semiIso)
+
+validPlatform :: ASemiIso' Platform (Architecture, Kernel)
+validPlatform = semiIso fromPlatform toPlatform
+    where
+        invalidPlatforms = [ (RiscV64, Darwin) ]
+        toPlatform (a, k)
+            | (a, k) `elem` invalidPlatforms = Left "invalid platform"
+            | otherwise = Right $ Platform a k
+        fromPlatform (Platform a k) = toPlatform (a, k) >> Right (a, k)
+
+platform :: (SyntaxText syn) => syn () Platform
+platform = validPlatform /$~ architecture /*/ S.char '-' /*/ kernel
 ```
