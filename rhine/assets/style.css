@@ -1,0 +1,190 @@
+@import url("fonts/Libertinus/fonts.css");
+
+:root {
+    --aside-width: 10em;
+    --engraving-width: 20em;
+    --engraving-ratio: calc(2672 / 2290);
+    --engraving-height: calc(var(--engraving-width) / var(--engraving-ratio));
+    --primary: #8B0000;
+    --primary-filter:
+        invert(10%)
+        sepia(94%)
+        saturate(3578%)
+        hue-rotate(356deg)
+        brightness(90%)
+        contrast(117%);
+}
+
+html {
+    background-color: #FDF5E6;
+    background-image: url("textured-paper.png");
+    box-shadow: 0 0 0 black, 0 0 10em #8A4D0F99 inset;
+}
+
+body {
+    margin: 0;
+    color: #343434;
+    font: 24px "Libertinus Serif", serif;
+    line-height: 1.45em;
+}
+
+#engraving {
+    background-image: url("rhine.png");
+    background-size: contain;
+}
+
+a, h1, h2, h3, h4, h5, h6 {
+    font-family: "Libertinus Sans";
+    font-weight: bold;
+}
+
+a {
+    cursor: pointer;
+    color: var(--primary);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+#title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#title h1 {
+    line-height: 0.8em;
+    font-weight: normal;
+    font-size: 500%;
+    margin: 0;
+    padding: 0;
+    color: var(--primary);
+}
+
+#subtitle {
+    font-style: italic;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+section ul {
+    margin: 1em 0;
+}
+
+#headings {
+    line-height: 1.5em;
+}
+
+#socials {
+    display: flex;
+    flex-direction: row;
+    margin: 1em 0;
+    gap: 0.5em;
+}
+
+#socials a:hover {
+    filter: var(--primary-filter);
+}
+
+#socials img {
+    height: 1.5em;
+}
+
+main section p:first-of-type::first-letter {
+    font-size: 150%;
+    color: var(--primary);
+    font-family: "Libertinus Serif Initials";
+}
+
+pre {
+    font-family: "Iosevka", monospace;
+    font-size: 80%;
+}
+
+#ecosystem-list li {
+    margin: 1em 0;
+}
+
+.lib-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.details {
+    font-size: 90%;
+}
+
+main:after {
+    display: block;
+    content: '';
+    background: url("footer.svg");
+    height: 5em;
+    width: calc(5em * 230 / 130);
+    margin: 2em auto;
+}
+
+@media (width >= 1000px) {
+body {
+    max-width: 40em;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+    min-width: 100wh;
+}
+aside {
+    width: var(--aside-width);
+}
+#engraving {
+    width: var(--engraving-width);
+    height: var(--engraving-height);
+    position: relative;
+    right: calc(var(--engraving-width) - var(--aside-width));
+}
+#title {
+    height: var(--engraving-height);
+}
+nav {
+    margin-right: 2em;
+}
+#headings {
+    text-align: right;
+}
+#socials {
+    justify-content: flex-end;
+}
+}
+
+@media (width < 1000px) {
+body {
+    padding: 0 2em;
+    font-size: 200%;
+}
+#engraving {
+    width: 90vw;
+    height: calc(90vw / var(--engraving-ratio));
+    margin: auto;
+    position: initial;
+    right: initial;
+}
+nav {
+    display: none;
+}
+#title {
+    margin-bottom: 2em;
+    text-align: center;
+}
+}

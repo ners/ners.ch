@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>Rhine - Haskell FRP with type-level clocks</title>
+<meta name="description" content="Rhine is a clock-safe library for synchronous and asynchronous FRP in Haskell.">
+<meta property="og:image" content="https://ners.ch/rhine/assets/rhine.png">
+<link rel="stylesheet" href="assets/style.css"/>
+<link rel="icon" href="assets/favicon.ico"/>
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+<aside>
+<div id="engraving"></div>
+<nav>
+<ul id="headings">
+<li><a href="#about">About</a></li>
+<li><a href="#why-rhine">Why Rhine</a></li>
+<li><a href="#ecosystem">Ecosystem</a></li>
+</ul>
+<ul id="socials">
+<li><a href="https://github.com/turion/rhine"><img src="assets/github.svg"></a></li>
+<li><a href="https://hackage.haskell.org/package/rhine"><img src="assets/haskell.svg"></a></li>
+<li><a href="https://matrix.to/#/#rhine:matrix.org"><img src="assets/matrix.svg"></a></li>
+</ul>
+</nav>
+</aside>
+<main>
+<div id="title">
+<h1>Rhine</h1>
+<div id="subtitle">Haskell FRP with type-level clocks</div>
+</div>
+<h2 id="about">About</h2>
+<section>
+<p>
+Rhine is a <em>clock-safe</em> library for synchronous and asynchronous Functional Reactive Programming (FRP) in Haskell.
+</p>
+<p>
+It separates the aspects of clocking, scheduling and resampling from each other, and ensures clock-safety at the type level.
+</p>
+</section>
+<h2 id="why-rhine">Why Rhine</h2>
+<section>
+<p>
+Coordinating systems running at different rates is a hard problem in general.
+Many kinds of bugs can occur, such as accidental synchronisation of independent subsystems, concurrency issues, buffer underruns and overflows, and space and time leaks.
+</p>
+<p>
+Functional descriptions of reactive systems suffer from similar issues.
+Functional Reactive Programming frameworks either work synchronously, or leave it to users to coordinate subsystems.
+Other asynchronous reactive frameworks show similar limitations.
+</p>
+<p>
+In Rhine, clock information is expressed at the type level, so that incorrectly clocked programs are <em>rejected at compile time</em>.
+</p>
+</section>
+<h2 id="ecosystem">Ecosystem</h2>
+<section>
+<ul id="ecosystem-list">
+<li>
+<div class="lib-name"><a href="https://hackage.haskell.org/package/rhine-bayes">rhine-bayes</a><img src="https://img.shields.io/hackage/v/rhine-bayes.svg"></div>
+<div class="details">Backend to the monad-bayes library, enabling you to write stochastic processes as signal functions, and performing online machine learning on them.</div>
+</li>
+<li>
+<div class="lib-name"><a href="https://hackage.haskell.org/package/rhine-terminal">rhine-terminal</a><img src="https://img.shields.io/hackage/v/rhine-terminal.svg"></div>
+<div class="details">Backend to the haskell-terminal library, enabling you to write terminal applications as signal functions.</div>
+</li>
+<li>
+<div class="lib-name"><a href="https://hackage.haskell.org/package/rhine-gloss">rhine-gloss</a><img src="https://img.shields.io/hackage/v/rhine-gloss.svg"></div>
+<div class="details">Backend to the gloss library, enabling you to write gloss applications as signal functions.</div>
+</li>
+<li>
+<div class="lib-name"><a href="https://github.com/ners/rhine-sdl2">rhine-sdl2</a></div>
+<div class="details">Backend to the SDL2 library, enabling you to write graphical applications as signal functions. Some example games are provided.</div>
+</li>
+<li>
+<div class="lib-name"><a href="https://github.com/ners/rhine-linux">rhine-linux</a></div>
+<div class="details">Rhine frontends for various Linux subsystems such as D-Bus and inotify, enabling you to write system applications.</div>
+</li>
+<li>
+<div class="lib-name"><a href="https://github.com/ners/rhine-chat">rhine-chat</a></div>
+<div class="details">Rhine frontends for various chat servers such as Discord and Matrix, enabling you to write chat clients and bots as signal functions.</div>
+</li>
+</ul>
+</section>
+</main>
+</body>
+</html>
