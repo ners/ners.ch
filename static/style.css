@@ -15,38 +15,6 @@
 	font-display: swap;
 }
 @font-face {
-	font-family: 'Source Sans';
-	font-style: normal;
-	src:
-		url(/static/fonts/SourceSans/SourceSans3VF-Roman.otf.woff2) format("woff2"),
-		url(/static/fonts/SourceSans/SourceSans3VF-Roman.otf) format("opentype");
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Source Sans';
-	font-style: italic;
-	src:
-		url(/static/fonts/SourceSans4/SourceSans3VF-Italic.otf.woff2) format("woff2"),
-		url(/static/fonts/SourceSans4/SourceSans3VF-Italic.otf) format("opentype");
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Source Code';
-	font-style: normal;
-	src:
-		url(/static/fonts/SourceCode/SourceCodeVariable-Roman.otf.woff2) format("woff2"),
-		url(/static/fonts/SourceCode/SourceCodeVariable-Roman.otf) format("opentype");
-	font-display: swap;
-}
-@font-face {
-	font-family: 'Source Code';
-	font-style: italic;
-	src:
-		url(/static/fonts/SourceCode/SourceCodeVariable-Italic.otf.woff2) format("woff2"),
-		url(/static/fonts/SourceCode/SourceCodeVariable-Roman.otf) format("opentype");
-	font-display: swap;
-}
-@font-face {
 	font-family: 'Monaspace Xenon Var';
 	font-style: normal;
 	src:
@@ -59,7 +27,7 @@ body {
 	font-family: 'Source Serif', serif;
 	font-size: 18px;
 	/* font-variation-settings: 'wght'300; */
-	background: url(/static/background.jpg);
+	background: url("/static/background.jpg");
 }
 
 @media only screen and (min-width: 480px) {

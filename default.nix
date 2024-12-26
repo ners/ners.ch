@@ -12,6 +12,7 @@ runCommand "website"
         "css"
         "gif"
         "hs"
+        "html"
         "jpg"
         "lua"
         "md"
@@ -21,7 +22,7 @@ runCommand "website"
         "ttf"
         "woff2"
         "yaml"
-      ] || file.type == "directory") ./.;
+      ]) ./.;
   };
   nativeBuildInputs = [ emanote ];
 } ''

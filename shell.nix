@@ -18,7 +18,7 @@ let
     name = "updateCss";
     text = ''
       date=$(date --iso-8601=seconds | sed 's/[^0-9]//g')
-      sed -i "s/\?version=[0-9]\+/\?version=''${date}/" templates/hooks/more-head.tpl
+      sed -i "s/\.css\?version=[0-9]\+/\.css\?version=''${date}/" -- **/*.tpl **/*.html
     '';
   };
 in
